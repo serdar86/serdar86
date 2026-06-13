@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="L'Étoile d'Or iletişim — Adres, telefon, e-posta, çalışma saatleri ve iletişim formu.">
+  <title>İletişim — L'Étoile d'Or</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/contact.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⭐</text></svg>">
+</head>
+<body>
+
+<nav class="navbar scrolled" id="navbar">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <span class="nav-logo-main">L'Étoile d'Or</span>
+      <span class="nav-logo-sub">Fine Dining — İstanbul</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Ana Sayfa</a></li>
+      <li><a href="menu.html">Menü</a></li>
+      <li><a href="gallery.html">Galeri</a></li>
+      <li><a href="contact.html" class="active">İletişim</a></li>
+    </ul>
+    <a href="reservation.html" class="btn btn-primary nav-cta">Rezervasyon</a>
+    <button class="nav-toggle" id="navToggle" aria-label="Menüyü Aç">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="index.html">Ana Sayfa</a>
+  <a href="menu.html">Menü</a>
+  <a href="gallery.html">Galeri</a>
+  <a href="contact.html">İletişim</a>
+  <a href="reservation.html" class="btn btn-primary">Rezervasyon Yap</a>
+</div>
+
+<!-- Page Hero -->
+<div class="page-hero">
+  <div class="container">
+    <span class="section-label">Bize Ulaşın</span>
+    <h1>İletişim</h1>
+    <p>Sorularınız, özel etkinlik talepleriniz veya rezervasyonlar için bizimle iletişime geçin.</p>
+    <div class="breadcrumb">
+      <a href="index.html">Ana Sayfa</a>
+      <span class="breadcrumb-sep">›</span>
+      <span>İletişim</span>
+    </div>
+  </div>
+</div>
+
+<!-- Contact Section -->
+<section style="background:var(--black);padding:5rem 0">
+  <div class="container">
+    <div class="contact-layout">
+      <!-- Left: Info -->
+      <div class="reveal">
+        <span class="section-label">İletişim Bilgileri</span>
+        <h2>Sizinle Tanışmaktan<br>Memnuniyet Duyarız</h2>
+        <div class="gold-line"></div>
+        <p>Herhangi bir sorunuz için bize ulaşın. Ekibimiz en kısa sürede yanıt verecektir.</p>
+
+        <div class="info-cards">
+          <div class="info-card">
+            <div class="info-card-icon">📍</div>
+            <div class="info-card-content">
+              <h4>Adres</h4>
+              <p>Çırağan Caddesi No: 32<br>Beşiktaş, İstanbul 34349</p>
+              <span class="small-note">Boğaz'a yürüme mesafesinde</span>
+            </div>
+          </div>
+          <div class="info-card">
+            <div class="info-card-icon">📞</div>
+            <div class="info-card-content">
+              <h4>Telefon</h4>
+              <a href="tel:+902121234567">+90 (212) 123 45 67</a>
+              <span class="small-note">Hafta içi 10:00–22:00</span>
+            </div>
+          </div>
+          <div class="info-card">
+            <div class="info-card-icon">✉️</div>
+            <div class="info-card-content">
+              <h4>E-posta</h4>
+              <a href="mailto:info@letoiledor.com.tr">info@letoiledor.com.tr</a><br>
+              <a href="mailto:rezervasyon@letoiledor.com.tr">rezervasyon@letoiledor.com.tr</a>
+              <span class="small-note">24 saat içinde yanıt</span>
+            </div>
+          </div>
+          <div class="info-card">
+            <div class="info-card-icon">🕐</div>
+            <div class="info-card-content">
+              <h4>Çalışma Saatleri</h4>
+              <table class="hours-table">
+                <tr><td>Pazartesi</td><td class="hours-closed">Kapalı</td></tr>
+                <tr><td>Salı – Cuma</td><td>18:00 – 23:00</td></tr>
+                <tr class="today"><td>Cumartesi</td><td>12:00 – 23:30</td></tr>
+                <tr><td>Pazar</td><td>12:00 – 22:00</td></tr>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right: Form -->
+      <div class="contact-form-wrap reveal reveal-delay-2">
+        <h3 class="contact-form-title">Mesaj Gönderin</h3>
+        <p class="contact-form-subtitle">Aşağıdaki formu doldurarak bizimle iletişime geçebilirsiniz.</p>
+        <form class="contact-form" id="contactForm" novalidate>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="c-name">Ad Soyad *</label>
+              <input type="text" id="c-name" placeholder="Adınız ve soyadınız" required>
+            </div>
+            <div class="form-group">
+              <label for="c-email">E-posta *</label>
+              <input type="email" id="c-email" placeholder="ornek@email.com" required>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="c-phone">Telefon Numarası</label>
+            <input type="tel" id="c-phone" placeholder="+90 5XX XXX XX XX">
+          </div>
+          <div class="form-group">
+            <label for="c-subject">Konu</label>
+            <select id="c-subject">
+              <option value="">Konu seçin</option>
+              <option value="reservation">Rezervasyon</option>
+              <option value="private">Özel Etkinlik</option>
+              <option value="feedback">Geri Bildirim</option>
+              <option value="media">Basın & Medya</option>
+              <option value="career">Kariyer</option>
+              <option value="other">Diğer</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="c-message">Mesajınız *</label>
+            <textarea id="c-message" placeholder="Mesajınızı buraya yazın..." required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary">Mesaj Gönder →</button>
+        </form>
+        <div class="form-success" id="contactSuccess">
+          <p>✓ Mesajınız başarıyla iletildi. En kısa sürede size dönüş yapacağız.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Map Section -->
+<section class="map-section">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="section-label">Konum</span>
+      <h2 class="section-title">Bizi Bulun</h2>
+      <div class="gold-line"></div>
+    </div>
+    <div class="map-embed reveal">
+      <span class="map-pin-icon">📍</span>
+      <h3>L'Étoile d'Or Restaurant</h3>
+      <p>Çırağan Caddesi No: 32, Beşiktaş, İstanbul</p>
+      <p style="font-size:0.8rem;color:var(--text-muted);margin-top:0.5rem">Vapur: Beşiktaş İskelesi (5 dk) &nbsp;|&nbsp; Metro: Akaretler (10 dk) &nbsp;|&nbsp; Otobüs: 25E, 40</p>
+      <a href="https://maps.google.com" target="_blank" rel="noopener" class="btn btn-outline">
+        🗺️ Google Maps'te Aç
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="nav-logo">
+          <span class="nav-logo-main">L'Étoile d'Or</span>
+          <span class="nav-logo-sub">Fine Dining — İstanbul</span>
+        </div>
+        <p>İstanbul'un kalbinde, lüksün ve gastronominin buluştuğu eşsiz bir deneyim.</p>
+        <div class="social-links">
+          <a href="#" class="social-link">📷</a>
+          <a href="#" class="social-link">👥</a>
+          <a href="#" class="social-link">🐦</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Sayfalar</h4>
+        <ul>
+          <li><a href="index.html">Ana Sayfa</a></li>
+          <li><a href="menu.html">Menü</a></li>
+          <li><a href="gallery.html">Galeri</a></li>
+          <li><a href="reservation.html">Rezervasyon</a></li>
+          <li><a href="contact.html">İletişim</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>İletişim</h4>
+        <ul>
+          <li><a href="tel:+902121234567">+90 (212) 123 45 67</a></li>
+          <li><a href="mailto:info@letoiledor.com.tr">info@letoiledor.com.tr</a></li>
+          <li><a href="#">Çırağan Cad. No:32, Beşiktaş</a></li>
+        </ul>
+      </div>
+      <div class="footer-col footer-hours">
+        <h4>Çalışma Saatleri</h4>
+        <p><span>Salı – Cuma</span><br>18:00 – 23:00</p>
+        <p style="margin-top:0.75rem"><span>Cumartesi – Pazar</span><br>12:00 – 23:30</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-copy">© 2024 L'Étoile d'Or. Tüm hakları saklıdır.</p>
+      <div class="footer-legal">
+        <a href="kvkk.html">KVKK</a>
+        <a href="privacy.html">Gizlilik</a>
+        <a href="terms.html">Kullanım Koşulları</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+<script>
+  document.getElementById('contactForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    const name = document.getElementById('c-name').value.trim();
+    const email = document.getElementById('c-email').value.trim();
+    const message = document.getElementById('c-message').value.trim();
+    if (!name || !email || !message) {
+      alert('Lütfen zorunlu alanları doldurun.');
+      return;
+    }
+    this.style.display = 'none';
+    document.getElementById('contactSuccess').classList.add('show');
+  });
+</script>
+</body>
+</html>

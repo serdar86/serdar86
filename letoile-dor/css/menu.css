@@ -1,0 +1,229 @@
+/* ===========================
+   Menu Page Styles
+   =========================== */
+
+.menu-nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin-bottom: 4rem;
+}
+
+.menu-tab {
+  padding: 0.6rem 1.5rem;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  border: 1px solid transparent;
+  border-radius: 2rem;
+  cursor: pointer;
+  transition: var(--transition);
+  background: transparent;
+  font-family: var(--font-sans);
+}
+.menu-tab:hover {
+  color: var(--ivory);
+  border-color: var(--glass-border);
+}
+.menu-tab.active {
+  color: var(--black);
+  background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+  border-color: var(--gold);
+  box-shadow: 0 4px 16px rgba(201,168,76,0.25);
+}
+
+/* Category Sections */
+.menu-category { display: none; }
+.menu-category.active { display: block; }
+
+.menu-category-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+.menu-category-header h2 {
+  color: var(--ivory);
+  font-style: italic;
+}
+
+.menu-items {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+}
+
+.menu-item {
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-lg);
+  padding: 1.5rem;
+  display: flex;
+  gap: 1.25rem;
+  align-items: flex-start;
+  transition: var(--transition);
+  backdrop-filter: blur(10px);
+}
+.menu-item:hover {
+  border-color: rgba(201,168,76,0.35);
+  box-shadow: 0 4px 24px rgba(201,168,76,0.1);
+  transform: translateY(-3px);
+}
+
+.menu-item-img {
+  width: 90px;
+  min-width: 90px;
+  height: 90px;
+  border-radius: var(--radius);
+  background: linear-gradient(135deg, var(--navy-light), var(--brown-dark));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.8rem;
+  color: rgba(201,168,76,0.35);
+  overflow: hidden;
+  flex-shrink: 0;
+}
+.menu-item-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.menu-item-content { flex: 1; }
+.menu-item-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 0.4rem;
+}
+.menu-item-name {
+  font-family: var(--font-serif);
+  font-size: 1.05rem;
+  color: var(--ivory);
+  line-height: 1.3;
+}
+.menu-item-price {
+  font-family: var(--font-serif);
+  font-size: 1.1rem;
+  color: var(--gold);
+  white-space: nowrap;
+  min-width: fit-content;
+}
+.menu-item-desc {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+  margin-bottom: 0.5rem;
+}
+.menu-item-tags {
+  display: flex;
+  gap: 0.4rem;
+  flex-wrap: wrap;
+  margin-top: 0.5rem;
+}
+.menu-tag {
+  font-size: 0.6rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 0.2rem 0.5rem;
+  border-radius: 2px;
+  background: rgba(201,168,76,0.1);
+  color: var(--gold);
+  border: 1px solid rgba(201,168,76,0.2);
+}
+.menu-tag.veg {
+  background: rgba(76, 168, 100, 0.1);
+  color: #5ac87a;
+  border-color: rgba(76, 168, 100, 0.2);
+}
+.menu-tag.new {
+  background: rgba(168, 100, 76, 0.1);
+  color: #c87a5a;
+  border-color: rgba(168, 100, 76, 0.2);
+}
+
+/* Featured menu item */
+.menu-item.featured {
+  grid-column: span 2;
+  border-color: rgba(201,168,76,0.3);
+  background: linear-gradient(135deg, rgba(201,168,76,0.06), var(--glass-bg));
+}
+.menu-item.featured .menu-item-img {
+  width: 120px;
+  min-width: 120px;
+  height: 120px;
+  font-size: 2.4rem;
+}
+
+.featured-badge {
+  font-size: 0.6rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold);
+  background: rgba(201,168,76,0.12);
+  border: 1px solid rgba(201,168,76,0.25);
+  padding: 0.25rem 0.6rem;
+  border-radius: 2px;
+  display: inline-block;
+  margin-bottom: 0.4rem;
+}
+
+/* Drinks section grid */
+.drinks-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+.drink-card {
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-lg);
+  padding: 1.75rem;
+  text-align: center;
+  transition: var(--transition);
+}
+.drink-card:hover {
+  border-color: rgba(201,168,76,0.3);
+  transform: translateY(-3px);
+}
+.drink-icon { font-size: 2.2rem; margin-bottom: 1rem; }
+.drink-name {
+  font-family: var(--font-serif);
+  font-size: 1rem;
+  color: var(--ivory);
+  margin-bottom: 0.4rem;
+}
+.drink-desc { font-size: 0.78rem; margin-bottom: 1rem; }
+.drink-price {
+  font-family: var(--font-serif);
+  font-size: 1.2rem;
+  color: var(--gold);
+}
+
+/* Allergies note */
+.menu-note {
+  text-align: center;
+  padding: 2rem;
+  background: rgba(201,168,76,0.04);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius);
+  margin-top: 3rem;
+}
+.menu-note p { font-size: 0.82rem; color: var(--text-muted); }
+.menu-note strong { color: var(--gold); }
+
+@media (max-width: 768px) {
+  .menu-items { grid-template-columns: 1fr; }
+  .menu-item.featured { grid-column: span 1; }
+  .drinks-grid { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 480px) {
+  .drinks-grid { grid-template-columns: 1fr; }
+  .menu-item { flex-direction: column; }
+  .menu-item-img { width: 100%; height: 140px; min-width: auto; }
+}

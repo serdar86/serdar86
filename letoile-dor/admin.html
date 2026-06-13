@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Admin Paneli — L'Étoile d'Or</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/admin.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⭐</text></svg>">
+</head>
+<body class="admin-body">
+
+<!-- LOGIN SCREEN -->
+<div class="admin-login" id="loginScreen">
+  <div class="login-card">
+    <div class="login-logo">
+      <div class="login-logo-main">L'Étoile d'Or</div>
+      <span class="login-logo-sub">Yönetim Paneli</span>
+    </div>
+    <h2 class="login-title">Giriş Yapın</h2>
+    <p class="login-subtitle">Yönetim paneline erişmek için kimlik bilgilerinizi girin.</p>
+    <form class="login-form" id="loginForm">
+      <div>
+        <label for="loginUser">Kullanıcı Adı</label>
+        <input type="text" id="loginUser" placeholder="admin" autocomplete="username">
+      </div>
+      <div>
+        <label for="loginPass">Şifre</label>
+        <input type="password" id="loginPass" placeholder="••••••••" autocomplete="current-password">
+      </div>
+      <div class="login-error" id="loginError">Kullanıcı adı veya şifre hatalı.</div>
+      <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center;padding:1rem">
+        Giriş Yap
+      </button>
+      <p class="login-note">Demo giriş: kullanıcı <strong>admin</strong> / şifre <strong>admin123</strong></p>
+    </form>
+  </div>
+</div>
+
+<!-- ADMIN WRAPPER -->
+<div class="admin-wrapper" id="adminWrapper">
+
+  <!-- Sidebar -->
+  <aside class="admin-sidebar" id="adminSidebar">
+    <div class="sidebar-header">
+      <div class="sidebar-logo-main">L'Étoile d'Or</div>
+      <span class="sidebar-logo-sub">Yönetim Paneli</span>
+      <div class="sidebar-badge">● Canlı Sistem</div>
+    </div>
+
+    <nav class="sidebar-nav">
+      <div class="sidebar-section-label">Genel</div>
+      <div class="sidebar-link active" data-page="dashboard">
+        <span class="sidebar-link-icon">📊</span>
+        <span>Gösterge Paneli</span>
+      </div>
+      <div class="sidebar-link" data-page="reservations">
+        <span class="sidebar-link-icon">📋</span>
+        <span>Rezervasyonlar</span>
+        <span class="sidebar-link-badge" id="pendingBadge">0</span>
+      </div>
+      <div class="sidebar-link" data-page="tables">
+        <span class="sidebar-link-icon">🪑</span>
+        <span>Masa Yönetimi</span>
+      </div>
+
+      <div class="sidebar-section-label">Sistem</div>
+      <div class="sidebar-link" onclick="window.open('index.html','_blank')">
+        <span class="sidebar-link-icon">🌐</span>
+        <span>Siteyi Görüntüle</span>
+      </div>
+      <div class="sidebar-link" onclick="window.open('reservation.html','_blank')">
+        <span class="sidebar-link-icon">➕</span>
+        <span>Rezervasyon Formu</span>
+      </div>
+    </nav>
+
+    <div class="sidebar-footer">
+      <div class="sidebar-user">
+        <div class="sidebar-avatar">A</div>
+        <div>
+          <div class="sidebar-user-name">Admin</div>
+          <div class="sidebar-user-role">Yönetici</div>
+        </div>
+        <span class="sidebar-logout" id="logoutBtn" title="Çıkış Yap">🚪</span>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Main -->
+  <main class="admin-main">
+    <div class="admin-topbar">
+      <div style="display:flex;align-items:center;gap:1rem">
+        <div class="admin-sidebar-toggle" id="sidebarToggle">
+          <span>☰</span>
+        </div>
+        <div>
+          <div class="admin-topbar-title" id="topbarTitle">Gösterge Paneli</div>
+          <div class="admin-topbar-sub" id="topbarSub">Hoş geldiniz, günlük özet aşağıdadır.</div>
+        </div>
+      </div>
+      <div class="topbar-actions">
+        <span class="topbar-date" id="topbarDate"></span>
+        <button class="btn btn-primary" style="font-size:0.72rem;padding:0.55rem 1.2rem" onclick="window.open('reservation.html','_blank')">
+          + Yeni Rezervasyon
+        </button>
+      </div>
+    </div>
+
+    <div class="admin-content">
+
+      <!-- DASHBOARD PAGE -->
+      <div id="page-dashboard">
+        <div class="stats-grid">
+          <div class="stat-card-admin">
+            <div class="stat-header">
+              <div class="stat-icon gold">📋</div>
+              <span class="stat-trend up" id="trend-total">↑</span>
+            </div>
+            <span class="stat-value" id="stat-total">0</span>
+            <span class="stat-label-admin">Toplam Rezervasyon</span>
+          </div>
+          <div class="stat-card-admin">
+            <div class="stat-header">
+              <div class="stat-icon blue">📅</div>
+              <span class="stat-trend up" id="trend-today"></span>
+            </div>
+            <span class="stat-value" id="stat-today">0</span>
+            <span class="stat-label-admin">Bugünkü Rezervasyon</span>
+          </div>
+          <div class="stat-card-admin">
+            <div class="stat-header">
+              <div class="stat-icon green">✓</div>
+            </div>
+            <span class="stat-value" id="stat-confirmed">0</span>
+            <span class="stat-label-admin">Onaylanan</span>
+          </div>
+          <div class="stat-card-admin">
+            <div class="stat-header">
+              <div class="stat-icon red">✗</div>
+            </div>
+            <span class="stat-value" id="stat-cancelled">0</span>
+            <span class="stat-label-admin">İptal Edilen</span>
+          </div>
+        </div>
+
+        <div class="admin-section-title">
+          Son Rezervasyonlar
+          <button class="btn btn-outline" style="font-size:0.7rem;padding:0.45rem 1rem" onclick="showPage('reservations')">Tümünü Gör</button>
+        </div>
+        <div class="res-table-wrap">
+          <table class="res-table">
+            <thead>
+              <tr>
+                <th>Misafir</th>
+                <th>Tarih & Saat</th>
+                <th>Kişi</th>
+                <th>Durum</th>
+                <th>İşlem</th>
+              </tr>
+            </thead>
+            <tbody id="dashboardTableBody">
+              <tr><td colspan="5"><div class="table-empty"><div class="table-empty-icon">📋</div><p>Henüz rezervasyon bulunmuyor.</p></div></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- RESERVATIONS PAGE -->
+      <div id="page-reservations" style="display:none">
+        <div class="admin-section-title">
+          Rezervasyon Listesi
+          <div style="display:flex;gap:0.5rem">
+            <button class="btn btn-ghost" style="font-size:0.7rem;padding:0.45rem 1rem" onclick="exportCSV()">📥 Dışa Aktar</button>
+          </div>
+        </div>
+
+        <!-- Filters -->
+        <div class="table-filters">
+          <div class="filter-group filter-search">
+            <label>Ara</label>
+            <div class="filter-search-wrap">
+              <span class="filter-search-icon">🔍</span>
+              <input type="text" id="searchInput" placeholder="Ad, e-posta veya telefon..." oninput="applyFilters()">
+            </div>
+          </div>
+          <div class="filter-group">
+            <label>Tarih</label>
+            <input type="date" id="filterDate" onchange="applyFilters()">
+          </div>
+          <div class="filter-group">
+            <label>Saat</label>
+            <select id="filterTime" onchange="applyFilters()">
+              <option value="">Tümü</option>
+              <option value="12">Öğle (12:00–14:00)</option>
+              <option value="18">Akşam (18:00–20:00)</option>
+              <option value="20">Gece (20:00–23:00)</option>
+            </select>
+          </div>
+          <div class="filter-group">
+            <label>Kişi Sayısı</label>
+            <select id="filterGuests" onchange="applyFilters()">
+              <option value="">Tümü</option>
+              <option value="1-2">1–2 Kişi</option>
+              <option value="3-4">3–4 Kişi</option>
+              <option value="5+">5+ Kişi</option>
+            </select>
+          </div>
+          <div class="filter-group">
+            <label>Durum</label>
+            <select id="filterStatus" onchange="applyFilters()">
+              <option value="">Tümü</option>
+              <option value="pending">Beklemede</option>
+              <option value="confirmed">Onaylandı</option>
+              <option value="cancelled">İptal Edildi</option>
+              <option value="completed">Tamamlandı</option>
+            </select>
+          </div>
+          <div class="filter-group" style="justify-content:flex-end">
+            <label>&nbsp;</label>
+            <button class="btn btn-ghost" style="font-size:0.72rem;padding:0.58rem 1rem" onclick="clearFilters()">Temizle</button>
+          </div>
+        </div>
+
+        <div class="res-table-wrap">
+          <table class="res-table">
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th class="sortable" onclick="sortTable('name')">Misafir ↕</th>
+                <th class="sortable" onclick="sortTable('date')">Tarih & Saat ↕</th>
+                <th>Kişi</th>
+                <th>Masa</th>
+                <th class="sortable" onclick="sortTable('status')">Durum ↕</th>
+                <th>İşlemler</th>
+              </tr>
+            </thead>
+            <tbody id="reservationsTableBody">
+              <tr><td colspan="7"><div class="table-empty"><div class="table-empty-icon">📋</div><p>Rezervasyon bulunamadı.</p></div></td></tr>
+            </tbody>
+          </table>
+          <div class="table-pagination">
+            <span class="pagination-info" id="paginationInfo">0 kayıt</span>
+            <div class="pagination-btns" id="paginationBtns"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- TABLES PAGE -->
+      <div id="page-tables" style="display:none">
+        <div class="admin-section-title">Masa Yönetimi</div>
+        <div style="display:flex;gap:1.5rem;margin-bottom:2rem;flex-wrap:wrap">
+          <div style="display:flex;align-items:center;gap:0.5rem;font-size:0.8rem">
+            <span style="color:#5ac87a">●</span> Boş
+          </div>
+          <div style="display:flex;align-items:center;gap:0.5rem;font-size:0.8rem">
+            <span style="color:var(--gold)">●</span> Rezerveli
+          </div>
+          <div style="display:flex;align-items:center;gap:0.5rem;font-size:0.8rem">
+            <span style="color:#e07070">●</span> Dolu
+          </div>
+        </div>
+        <div class="tables-grid" id="tablesGrid"></div>
+      </div>
+
+    </div>
+  </main>
+</div>
+
+<!-- Detail Modal -->
+<div class="modal-overlay" id="detailModal">
+  <div class="modal-box">
+    <div class="modal-header">
+      <h3 class="modal-title">Rezervasyon Detayı</h3>
+      <button class="modal-close" onclick="closeModal()">✕</button>
+    </div>
+    <div class="modal-body" id="modalBody"></div>
+    <div class="modal-footer">
+      <button class="btn btn-ghost" onclick="closeModal()">Kapat</button>
+    </div>
+  </div>
+</div>
+
+<script src="js/admin.js"></script>
+</body>
+</html>

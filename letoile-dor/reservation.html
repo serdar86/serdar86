@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="L'Étoile d'Or online rezervasyon — Masanızı kolayca ayırtın, unutulmaz bir deneyim yaşayın.">
+  <title>Rezervasyon — L'Étoile d'Or</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/reservation.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⭐</text></svg>">
+</head>
+<body>
+
+<nav class="navbar scrolled" id="navbar">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <span class="nav-logo-main">L'Étoile d'Or</span>
+      <span class="nav-logo-sub">Fine Dining — İstanbul</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Ana Sayfa</a></li>
+      <li><a href="menu.html">Menü</a></li>
+      <li><a href="gallery.html">Galeri</a></li>
+      <li><a href="contact.html">İletişim</a></li>
+    </ul>
+    <a href="reservation.html" class="btn btn-primary nav-cta active">Rezervasyon</a>
+    <button class="nav-toggle" id="navToggle" aria-label="Menüyü Aç">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="index.html">Ana Sayfa</a>
+  <a href="menu.html">Menü</a>
+  <a href="gallery.html">Galeri</a>
+  <a href="contact.html">İletişim</a>
+  <a href="reservation.html" class="btn btn-primary">Rezervasyon Yap</a>
+</div>
+
+<!-- Page Hero -->
+<div class="page-hero">
+  <div class="container">
+    <span class="section-label">Online Rezervasyon</span>
+    <h1>Masanızı Ayırtın</h1>
+    <p>Özel anlarınız için masanızı kolayca ayırtın. Rezervasyon onayınız e-posta ile iletilecektir.</p>
+    <div class="breadcrumb">
+      <a href="index.html">Ana Sayfa</a>
+      <span class="breadcrumb-sep">›</span>
+      <span>Rezervasyon</span>
+    </div>
+  </div>
+</div>
+
+<!-- Reservation Section -->
+<section style="background:var(--black);padding:5rem 0">
+  <div class="container">
+
+    <!-- Progress Steps -->
+    <div class="res-steps reveal">
+      <div class="step-item active" id="step-1">
+        <div class="step-num">1</div>
+        <span class="step-label">Bilgiler</span>
+      </div>
+      <div class="step-connector" id="connector-1"></div>
+      <div class="step-item" id="step-2">
+        <div class="step-num">2</div>
+        <span class="step-label">Tercihler</span>
+      </div>
+      <div class="step-connector" id="connector-2"></div>
+      <div class="step-item" id="step-3">
+        <div class="step-num">3</div>
+        <span class="step-label">Özet</span>
+      </div>
+      <div class="step-connector" id="connector-3"></div>
+      <div class="step-item" id="step-4">
+        <div class="step-num">✓</div>
+        <span class="step-label">Onay</span>
+      </div>
+    </div>
+
+    <div class="reservation-layout">
+      <!-- Form -->
+      <div>
+        <!-- Step 1: Contact Info -->
+        <div class="res-form-wrap reveal" id="form-step-1">
+          <h2 class="form-title">Kişisel Bilgiler</h2>
+          <p class="form-subtitle">Rezervasyonunuz için iletişim bilgilerinizi girin</p>
+          <form id="reservationForm" novalidate>
+            <div class="form-grid">
+              <div class="form-group">
+                <label for="guestName">Ad Soyad <span>*</span></label>
+                <input type="text" id="guestName" name="guestName" placeholder="Adınız ve soyadınız" autocomplete="name">
+                <span class="field-error" id="err-guestName">Ad soyad zorunludur.</span>
+              </div>
+              <div class="form-group">
+                <label for="guestPhone">Telefon <span>*</span></label>
+                <input type="tel" id="guestPhone" name="guestPhone" placeholder="+90 5XX XXX XX XX" autocomplete="tel">
+                <span class="field-error" id="err-guestPhone">Geçerli bir telefon numarası girin.</span>
+              </div>
+              <div class="form-group form-full">
+                <label for="guestEmail">E-posta Adresi <span>*</span></label>
+                <input type="email" id="guestEmail" name="guestEmail" placeholder="ornek@email.com" autocomplete="email">
+                <span class="field-error" id="err-guestEmail">Geçerli bir e-posta adresi girin.</span>
+              </div>
+              <div class="form-group">
+                <label for="resDate">Rezervasyon Tarihi <span>*</span></label>
+                <input type="date" id="resDate" name="resDate">
+                <span class="field-error" id="err-resDate">Lütfen bir tarih seçin.</span>
+              </div>
+              <div class="form-group">
+                <label for="resTime">Saat <span>*</span></label>
+                <select id="resTime" name="resTime">
+                  <option value="">Saat seçin</option>
+                  <option value="12:00">12:00</option>
+                  <option value="12:30">12:30</option>
+                  <option value="13:00">13:00</option>
+                  <option value="13:30">13:30</option>
+                  <option value="18:00">18:00</option>
+                  <option value="18:30">18:30</option>
+                  <option value="19:00">19:00</option>
+                  <option value="19:30">19:30</option>
+                  <option value="20:00">20:00</option>
+                  <option value="20:30">20:30</option>
+                  <option value="21:00">21:00</option>
+                  <option value="21:30">21:30</option>
+                  <option value="22:00">22:00</option>
+                </select>
+                <span class="field-error" id="err-resTime">Lütfen bir saat seçin.</span>
+              </div>
+              <div class="form-group">
+                <label for="guestCount">Kişi Sayısı <span>*</span></label>
+                <select id="guestCount" name="guestCount">
+                  <option value="">Kişi sayısı</option>
+                  <option value="1">1 Kişi</option>
+                  <option value="2">2 Kişi</option>
+                  <option value="3">3 Kişi</option>
+                  <option value="4">4 Kişi</option>
+                  <option value="5">5 Kişi</option>
+                  <option value="6">6 Kişi</option>
+                  <option value="7">7 Kişi</option>
+                  <option value="8">8 Kişi</option>
+                  <option value="9-12">9–12 Kişi</option>
+                  <option value="13+">13+ Kişi (Özel Salon)</option>
+                </select>
+                <span class="field-error" id="err-guestCount">Kişi sayısı seçin.</span>
+              </div>
+              <div class="form-group">
+                <label for="occasion">Özel Durum</label>
+                <select id="occasion" name="occasion">
+                  <option value="">Seçiniz (isteğe bağlı)</option>
+                  <option value="birthday">🎂 Doğum Günü</option>
+                  <option value="anniversary">💍 Yıl Dönümü</option>
+                  <option value="proposal">💍 Evlilik Teklifi</option>
+                  <option value="business">💼 İş Yemeği</option>
+                  <option value="family">👨‍👩‍👧 Aile Yemeği</option>
+                  <option value="romantic">❤️ Romantik Akşam</option>
+                  <option value="other">Diğer</option>
+                </select>
+              </div>
+            </div>
+
+            <!-- Table Preference -->
+            <div class="form-group form-full" style="margin-top:1.5rem">
+              <label>Masa Tercihiniz</label>
+              <div class="table-options" style="margin-top:0.75rem">
+                <div class="table-option">
+                  <input type="radio" name="tablePreference" id="table-window" value="window">
+                  <label for="table-window">
+                    <span class="table-icon">🪟</span>
+                    <span class="table-name">Pencere Kenarı</span>
+                    <span>Boğaz manzarası</span>
+                  </label>
+                </div>
+                <div class="table-option">
+                  <input type="radio" name="tablePreference" id="table-private" value="private">
+                  <label for="table-private">
+                    <span class="table-icon">🔒</span>
+                    <span class="table-name">Özel Köşe</span>
+                    <span>Sessiz, mahrem</span>
+                  </label>
+                </div>
+                <div class="table-option">
+                  <input type="radio" name="tablePreference" id="table-any" value="any" checked>
+                  <label for="table-any">
+                    <span class="table-icon">🌟</span>
+                    <span class="table-name">Şef Seçimi</span>
+                    <span>Bize bırakın</span>
+                  </label>
+                </div>
+              </div>
+            </div>
+
+            <!-- Special Requests -->
+            <div class="form-group form-full" style="margin-top:1.5rem">
+              <label for="specialNote">Özel İstek veya Not</label>
+              <textarea id="specialNote" name="specialNote" placeholder="Alerji bilgileri, özel süslemeler, diyet gereksinimleri veya diğer isteklerinizi buraya yazabilirsiniz..."></textarea>
+            </div>
+
+            <div class="form-submit">
+              <button type="submit" class="btn btn-primary" id="submitBtn">
+                Rezervasyonu Tamamla →
+              </button>
+              <p class="form-terms">
+                Rezervasyon yaparak <a href="kvkk.html">KVKK Aydınlatma Metni</a>'ni ve
+                <a href="terms.html">Kullanım Koşulları</a>'nı kabul etmiş sayılırsınız.
+              </p>
+            </div>
+          </form>
+        </div>
+
+        <!-- Confirmation Screen -->
+        <div class="res-form-wrap confirmation-screen" id="confirmationScreen">
+          <div class="confirmation-icon">✓</div>
+          <h2>Rezervasyonunuz Alındı!</h2>
+          <p>Rezervasyon talebiniz başarıyla iletildi. Ekibimiz en kısa sürede onay mesajı gönderecektir.</p>
+          <div class="confirmation-code" id="confirmCode">EDO-000000</div>
+          <p style="font-size:0.8rem;color:var(--text-muted)">Bu kodu rezervasyon onayı için saklayın.</p>
+          <div class="confirmation-details" id="confirmDetails"></div>
+          <div class="confirmation-actions">
+            <a href="index.html" class="btn btn-ghost">Ana Sayfaya Dön</a>
+            <a href="menu.html" class="btn btn-primary">Menüyü İncele</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Sidebar Summary -->
+      <div>
+        <div class="res-summary reveal reveal-delay-2">
+          <h3 class="summary-title">📋 Rezervasyon Özeti</h3>
+          <div class="summary-row">
+            <span class="summary-icon">👤</span>
+            <div class="summary-info">
+              <label>Ad Soyad</label>
+              <span id="sum-name" class="empty">—</span>
+            </div>
+          </div>
+          <div class="summary-row">
+            <span class="summary-icon">📱</span>
+            <div class="summary-info">
+              <label>Telefon</label>
+              <span id="sum-phone" class="empty">—</span>
+            </div>
+          </div>
+          <div class="summary-row">
+            <span class="summary-icon">✉️</span>
+            <div class="summary-info">
+              <label>E-posta</label>
+              <span id="sum-email" class="empty">—</span>
+            </div>
+          </div>
+          <div class="summary-row">
+            <span class="summary-icon">📅</span>
+            <div class="summary-info">
+              <label>Tarih</label>
+              <span id="sum-date" class="empty">—</span>
+            </div>
+          </div>
+          <div class="summary-row">
+            <span class="summary-icon">🕐</span>
+            <div class="summary-info">
+              <label>Saat</label>
+              <span id="sum-time" class="empty">—</span>
+            </div>
+          </div>
+          <div class="summary-row">
+            <span class="summary-icon">👥</span>
+            <div class="summary-info">
+              <label>Kişi Sayısı</label>
+              <span id="sum-guests" class="empty">—</span>
+            </div>
+          </div>
+          <div class="summary-row">
+            <span class="summary-icon">🪑</span>
+            <div class="summary-info">
+              <label>Masa Tercihi</label>
+              <span id="sum-table" class="empty">Şef Seçimi</span>
+            </div>
+          </div>
+          <div class="summary-note">
+            <strong>ℹ️ Bilgi</strong>
+            Rezervasyon talebiniz onaylandıktan sonra e-posta ile bilgilendirileceksiniz. Telefon ile de ulaşabiliriz.
+          </div>
+        </div>
+
+        <div class="res-info-cards">
+          <div class="res-info-card reveal reveal-delay-3">
+            <span class="ri-icon">📞</span>
+            <p><strong>Yardım mı lazım?</strong><br>
+            <a href="tel:+902121234567" style="color:var(--gold)">+90 (212) 123 45 67</a> numarasını arayarak rezervasyon yaptırabilirsiniz.</p>
+          </div>
+          <div class="res-info-card reveal reveal-delay-4">
+            <span class="ri-icon">⏰</span>
+            <p><strong>İptal Politikası:</strong> Rezervasyonunuzu 24 saat öncesine kadar ücretsiz iptal edebilirsiniz.</p>
+          </div>
+          <div class="res-info-card reveal">
+            <span class="ri-icon">👔</span>
+            <p><strong>Kıyafet Kuralı:</strong> Restoranımızda smart casual veya formal kıyafet tercih edilmektedir.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="nav-logo">
+          <span class="nav-logo-main">L'Étoile d'Or</span>
+          <span class="nav-logo-sub">Fine Dining — İstanbul</span>
+        </div>
+        <p>İstanbul'un kalbinde, lüksün ve gastronominin buluştuğu eşsiz bir deneyim.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Sayfalar</h4>
+        <ul>
+          <li><a href="index.html">Ana Sayfa</a></li>
+          <li><a href="menu.html">Menü</a></li>
+          <li><a href="gallery.html">Galeri</a></li>
+          <li><a href="contact.html">İletişim</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>İletişim</h4>
+        <ul>
+          <li><a href="tel:+902121234567">+90 (212) 123 45 67</a></li>
+          <li><a href="mailto:info@letoiledor.com.tr">info@letoiledor.com.tr</a></li>
+        </ul>
+      </div>
+      <div class="footer-col footer-hours">
+        <h4>Çalışma Saatleri</h4>
+        <p><span>Salı – Pazar</span><br>18:00 – 23:30</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-copy">© 2024 L'Étoile d'Or. Tüm hakları saklıdır.</p>
+      <div class="footer-legal">
+        <a href="kvkk.html">KVKK</a>
+        <a href="privacy.html">Gizlilik</a>
+        <a href="terms.html">Kullanım Koşulları</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+<script src="js/reservation.js"></script>
+</body>
+</html>

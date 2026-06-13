@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="L'Étoile d'Or galeri — Restoran atmosferi, yemek sunumları, özel mekan fotoğrafları.">
+  <title>Galeri — L'Étoile d'Or</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/gallery.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⭐</text></svg>">
+</head>
+<body>
+
+<nav class="navbar scrolled" id="navbar">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <span class="nav-logo-main">L'Étoile d'Or</span>
+      <span class="nav-logo-sub">Fine Dining — İstanbul</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Ana Sayfa</a></li>
+      <li><a href="menu.html">Menü</a></li>
+      <li><a href="gallery.html" class="active">Galeri</a></li>
+      <li><a href="contact.html">İletişim</a></li>
+    </ul>
+    <a href="reservation.html" class="btn btn-primary nav-cta">Rezervasyon</a>
+    <button class="nav-toggle" id="navToggle" aria-label="Menüyü Aç">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="index.html">Ana Sayfa</a>
+  <a href="menu.html">Menü</a>
+  <a href="gallery.html">Galeri</a>
+  <a href="contact.html">İletişim</a>
+  <a href="reservation.html" class="btn btn-primary">Rezervasyon Yap</a>
+</div>
+
+<!-- Page Hero -->
+<div class="page-hero">
+  <div class="container">
+    <span class="section-label">Atmosfer & Lezzet</span>
+    <h1>Galeri</h1>
+    <p>Restoranımızın büyüleyici atmosferini, şef sunumlarını ve özel anları görsellerle keşfedin.</p>
+    <div class="breadcrumb">
+      <a href="index.html">Ana Sayfa</a>
+      <span class="breadcrumb-sep">›</span>
+      <span>Galeri</span>
+    </div>
+  </div>
+</div>
+
+<!-- Gallery Section -->
+<section style="background:var(--black);padding:5rem 0">
+  <div class="container">
+
+    <!-- Filter -->
+    <div class="gallery-filter reveal">
+      <button class="filter-btn active" data-filter="all">Tümü</button>
+      <button class="filter-btn" data-filter="interior">🏛️ İç Mekan</button>
+      <button class="filter-btn" data-filter="food">🍽️ Yemekler</button>
+      <button class="filter-btn" data-filter="private">🔒 Özel Salon</button>
+      <button class="filter-btn" data-filter="ambiance">🕯️ Ambiyans</button>
+    </div>
+
+    <!-- Gallery Grid -->
+    <div class="gallery-masonry" id="galleryGrid">
+
+      <div class="gallery-masonry-item reveal" data-category="food" data-index="0">
+        <div class="gal-placeholder" style="min-height:320px">🦞</div>
+        <div class="gal-overlay">
+          <span class="gal-category">Yemekler</span>
+          <h3 class="gal-title">Truffle Kaplamalı Istakoz</h3>
+          <span class="gal-expand">+</span>
+        </div>
+      </div>
+
+      <div class="gallery-masonry-item reveal reveal-delay-1" data-category="interior" data-index="1">
+        <div class="gal-placeholder" style="min-height:240px">🏛️</div>
+        <div class="gal-overlay">
+          <span class="gal-category">İç Mekan</span>
+          <h3 class="gal-title">Ana Salon</h3>
+          <span class="gal-expand">+</span>
+        </div>
+      </div>
+
+      <div class="gallery-masonry-item reveal reveal-delay-2" data-category="ambiance" data-index="2">
+        <div class="gal-placeholder" style="min-height:200px">🕯️</div>
+        <div class="gal-overlay">
+          <span class="gal-category">Ambiyans</span>
+          <h3 class="gal-title">Akşam Işıklandırması</h3>
+          <span class="gal-expand">+</span>
+        </div>
+      </div>
+
+      <div class="gallery-masonry-item reveal" data-category="food" data-index="3">
+        <div class="gal-placeholder" style="min-height:280px">🥩</div>
+        <div class="gal-overlay">
+          <span class="gal-category">Yemekler</span>
+          <h3 class="gal-title">Wagyu A5 Bonfile</h3>
+          <span class="gal-expand">+</span>
+        </div>
+      </div>
+
+      <div class="gallery-masonry-item reveal reveal-delay-1" data-category="private" data-index="4">
+        <div class="gal-placeholder" style="min-height:340px">🔒</div>
+        <div class="gal-overlay">
+          <span class="gal-category">Özel Salon</span>
+          <h3 class="gal-title">VIP Özel Yemek Salonu</h3>
+          <span class="gal-expand">+</span>
+        </div>
+      </div>
+
+      <div class="gallery-masonry-item reveal reveal-delay-2" data-category="ambiance" data-index="5">
+        <div class="gal-placeholder" style="min-height:220px">🍷</div>
+        <div class="gal-overlay">
+          <span class="gal-category">Ambiyans</span>
+          <h3 class="gal-title">Şarap Mahzeni</h3>
+          <span class="gal-expand">+</span>
+        </div>
+      </div>
+
+      <div class="gallery-masonry-item reveal" data-category="food" data-index="6">
+        <div class="gal-placeholder" style="min-height:260px">🍫</div>
+        <div class="gal-overlay">
+          <span class="gal-category">Yemekler</span>
+          <h3 class="gal-title">Çikolata Soufflé</h3>
+          <span class="gal-expand">+</span>
+        </div>
+      </div>
+
+      <div class="gallery-masonry-item reveal reveal-delay-1" data-category="interior" data-index="7">
+        <div class="gal-placeholder" style="min-height:300px">🌿</div>
+        <div class="gal-overlay">
+          <span class="gal-category">İç Mekan</span>
+          <h3 class="gal-title">Teras & Bahçe</h3>
+          <span class="gal-expand">+</span>
+        </div>
+      </div>
+
+      <div class="gallery-masonry-item reveal reveal-delay-2" data-category="food" data-index="8">
+        <div class="gal-placeholder" style="min-height:220px">🦪</div>
+        <div class="gal-overlay">
+          <span class="gal-category">Yemekler</span>
+          <h3 class="gal-title">İstiridye ve Havyar</h3>
+          <span class="gal-expand">+</span>
+        </div>
+      </div>
+
+      <div class="gallery-masonry-item reveal" data-category="ambiance" data-index="9">
+        <div class="gal-placeholder" style="min-height:290px">🎻</div>
+        <div class="gal-overlay">
+          <span class="gal-category">Ambiyans</span>
+          <h3 class="gal-title">Canlı Müzik Gecesi</h3>
+          <span class="gal-expand">+</span>
+        </div>
+      </div>
+
+      <div class="gallery-masonry-item reveal reveal-delay-1" data-category="private" data-index="10">
+        <div class="gal-placeholder" style="min-height:250px">💍</div>
+        <div class="gal-overlay">
+          <span class="gal-category">Özel Salon</span>
+          <h3 class="gal-title">Romantik Akşam Yemeği</h3>
+          <span class="gal-expand">+</span>
+        </div>
+      </div>
+
+      <div class="gallery-masonry-item reveal reveal-delay-2" data-category="interior" data-index="11">
+        <div class="gal-placeholder" style="min-height:270px">🪞</div>
+        <div class="gal-overlay">
+          <span class="gal-category">İç Mekan</span>
+          <h3 class="gal-title">Bar & Lounge Alanı</h3>
+          <span class="gal-expand">+</span>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- CTA -->
+    <div style="text-align:center;margin-top:5rem" class="reveal">
+      <span class="section-label" style="display:block;text-align:center">Sizin için buradayız</span>
+      <h2 style="color:var(--ivory);margin-bottom:1rem">Bu Atmosferi Yaşamak İster misiniz?</h2>
+      <p style="max-width:460px;margin:0 auto 2rem">Masanızı ayırtın, unutulmaz bir deneyim sizi bekliyor.</p>
+      <a href="reservation.html" class="btn btn-primary">Rezervasyon Yap</a>
+    </div>
+
+  </div>
+</section>
+
+<!-- Lightbox -->
+<div class="lightbox" id="lightbox">
+  <div class="lightbox-inner">
+    <button class="lightbox-close" id="lightboxClose">✕</button>
+    <div class="lightbox-img-placeholder" id="lightboxImg">🍽️</div>
+    <div class="lightbox-caption">
+      <p id="lightboxCategory" class="gal-category"></p>
+      <h3 id="lightboxTitle"></h3>
+    </div>
+  </div>
+  <button class="lightbox-nav lightbox-prev" id="lightboxPrev">‹</button>
+  <button class="lightbox-nav lightbox-next" id="lightboxNext">›</button>
+</div>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="nav-logo">
+          <span class="nav-logo-main">L'Étoile d'Or</span>
+          <span class="nav-logo-sub">Fine Dining — İstanbul</span>
+        </div>
+        <p>İstanbul'un kalbinde, lüksün ve gastronominin buluştuğu eşsiz bir deneyim.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Sayfalar</h4>
+        <ul>
+          <li><a href="index.html">Ana Sayfa</a></li>
+          <li><a href="menu.html">Menü</a></li>
+          <li><a href="gallery.html">Galeri</a></li>
+          <li><a href="contact.html">İletişim</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>İletişim</h4>
+        <ul>
+          <li><a href="tel:+902121234567">+90 (212) 123 45 67</a></li>
+          <li><a href="mailto:info@letoiledor.com.tr">info@letoiledor.com.tr</a></li>
+        </ul>
+      </div>
+      <div class="footer-col footer-hours">
+        <h4>Çalışma Saatleri</h4>
+        <p><span>Salı – Pazar</span><br>18:00 – 23:30</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-copy">© 2024 L'Étoile d'Or. Tüm hakları saklıdır.</p>
+      <div class="footer-legal">
+        <a href="kvkk.html">KVKK</a>
+        <a href="privacy.html">Gizlilik</a>
+        <a href="terms.html">Kullanım Koşulları</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+<script>
+  // Gallery filter
+  const filterBtns = document.querySelectorAll('.filter-btn');
+  const galleryItems = document.querySelectorAll('.gallery-masonry-item');
+
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', function() {
+      filterBtns.forEach(b => b.classList.remove('active'));
+      this.classList.add('active');
+      const filter = this.dataset.filter;
+      galleryItems.forEach(item => {
+        if (filter === 'all' || item.dataset.category === filter) {
+          item.style.display = 'block';
+        } else {
+          item.style.display = 'none';
+        }
+      });
+    });
+  });
+
+  // Lightbox
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImg = document.getElementById('lightboxImg');
+  const lightboxTitle = document.getElementById('lightboxTitle');
+  const lightboxCategory = document.getElementById('lightboxCategory');
+  let currentIndex = 0;
+  const items = Array.from(galleryItems);
+
+  function openLightbox(index) {
+    currentIndex = index;
+    const item = items[index];
+    const emoji = item.querySelector('.gal-placeholder').textContent.trim();
+    lightboxImg.textContent = emoji;
+    lightboxTitle.textContent = item.querySelector('.gal-title').textContent;
+    lightboxCategory.textContent = item.querySelector('.gal-category').textContent;
+    lightbox.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+
+  galleryItems.forEach((item, i) => {
+    item.addEventListener('click', () => openLightbox(i));
+  });
+
+  document.getElementById('lightboxClose').addEventListener('click', () => {
+    lightbox.classList.remove('open');
+    document.body.style.overflow = '';
+  });
+  lightbox.addEventListener('click', e => {
+    if (e.target === lightbox) {
+      lightbox.classList.remove('open');
+      document.body.style.overflow = '';
+    }
+  });
+  document.getElementById('lightboxPrev').addEventListener('click', () => {
+    const visibleItems = items.filter(i => i.style.display !== 'none');
+    const ci = visibleItems.indexOf(items[currentIndex]);
+    const prev = (ci - 1 + visibleItems.length) % visibleItems.length;
+    openLightbox(items.indexOf(visibleItems[prev]));
+  });
+  document.getElementById('lightboxNext').addEventListener('click', () => {
+    const visibleItems = items.filter(i => i.style.display !== 'none');
+    const ci = visibleItems.indexOf(items[currentIndex]);
+    const next = (ci + 1) % visibleItems.length;
+    openLightbox(items.indexOf(visibleItems[next]));
+  });
+  document.addEventListener('keydown', e => {
+    if (!lightbox.classList.contains('open')) return;
+    if (e.key === 'Escape') { lightbox.classList.remove('open'); document.body.style.overflow = ''; }
+    if (e.key === 'ArrowLeft') document.getElementById('lightboxPrev').click();
+    if (e.key === 'ArrowRight') document.getElementById('lightboxNext').click();
+  });
+</script>
+</body>
+</html>

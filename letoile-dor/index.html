@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="L'Étoile d'Or — İstanbul'un kalbinde Michelin yıldızlı şefler tarafından hazırlanan olağanüstü gastronomi deneyimi. Rezervasyon için hemen iletişime geçin.">
+  <meta name="keywords" content="fine dining, lüks restoran, İstanbul restoran, rezervasyon, gourmet">
+  <meta property="og:title" content="L'Étoile d'Or — Lüks Fine Dining Restoran">
+  <meta property="og:description" content="Michelin yıldızlı şefler eşliğinde eşsiz bir gastronomi deneyimi.">
+  <title>L'Étoile d'Or — Lüks Fine Dining Restoran</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⭐</text></svg>">
+</head>
+<body>
+
+<!-- ===== NAVIGATION ===== -->
+<nav class="navbar" id="navbar">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <span class="nav-logo-main">L'Étoile d'Or</span>
+      <span class="nav-logo-sub">Fine Dining — İstanbul</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html" class="active">Ana Sayfa</a></li>
+      <li><a href="menu.html">Menü</a></li>
+      <li><a href="gallery.html">Galeri</a></li>
+      <li><a href="contact.html">İletişim</a></li>
+    </ul>
+    <a href="reservation.html" class="btn btn-primary nav-cta">Rezervasyon</a>
+    <button class="nav-toggle" id="navToggle" aria-label="Menüyü Aç">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- Mobile Menu -->
+<div class="mobile-menu" id="mobileMenu">
+  <a href="index.html">Ana Sayfa</a>
+  <a href="menu.html">Menü</a>
+  <a href="gallery.html">Galeri</a>
+  <a href="contact.html">İletişim</a>
+  <a href="reservation.html" class="btn btn-primary">Rezervasyon Yap</a>
+</div>
+
+<!-- ===== HERO ===== -->
+<section class="hero" id="hero">
+  <div class="hero-image"></div>
+  <div class="hero-bg"></div>
+  <div class="hero-content">
+    <div class="hero-eyebrow">
+      <span>İstanbul · Fine Dining · 2009'dan beri</span>
+    </div>
+    <h1><em>L'Étoile d'Or</em></h1>
+    <p class="hero-tagline">Altın Yıldız'ın Sofrasında Zamanı Unutun</p>
+    <p class="hero-desc">Her lokmada bir sanat eseri, her anımda bir anı. Michelin yıldızlı şeflerimizin özenle hazırladığı deneyim sizi bekliyor.</p>
+    <div class="hero-actions">
+      <a href="reservation.html" class="btn btn-primary">Masa Rezervasyonu</a>
+      <a href="menu.html" class="btn btn-ghost">Menüyü Keşfet</a>
+    </div>
+  </div>
+  <div class="hero-scroll" onclick="document.getElementById('about').scrollIntoView({behavior:'smooth'})">
+    <div class="scroll-line"></div>
+    <span>Aşağı Kaydır</span>
+  </div>
+</section>
+
+<!-- ===== ABOUT ===== -->
+<section class="about" id="about">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-image-wrap reveal">
+        <div class="about-img-placeholder">
+          Restoran İçi
+          <div class="about-img-accent"></div>
+        </div>
+        <div class="about-badge">
+          <span class="about-badge-num">15+</span>
+          <span class="about-badge-text">Yıllık Deneyim</span>
+        </div>
+      </div>
+      <div class="about-content reveal reveal-delay-2">
+        <span class="section-label">Hikayemiz</span>
+        <h2 class="section-title">Lüksü ve Sanatı<br>Bir Araya Getiriyoruz</h2>
+        <div class="gold-line"></div>
+        <p>L'Étoile d'Or, 2009 yılında İstanbul'un kalbinde kapılarını açtığından bu yana, gastronomi dünyasında benzersiz bir yer edinmiştir. Fransız mutfağının zarifliği ile Türk mutfağının zenginliğini harmanlayan şeflerimiz, her tabakta bir şaheser sunmaktadır.</p>
+        <p style="margin-top:1rem">Restoranımız, 12 uluslararası ödül ve sayısız eleştirmen takdiriyle misafirlerine sadece yemek değil, unutulmaz bir deneyim sunmaktadır.</p>
+        <div class="about-features">
+          <div class="about-feature">
+            <div class="about-feature-icon">🌟</div>
+            <div>
+              <h4>Michelin Yıldızı</h4>
+              <p>Üç yıl üst üste ödül</p>
+            </div>
+          </div>
+          <div class="about-feature">
+            <div class="about-feature-icon">👨‍🍳</div>
+            <div>
+              <h4>Usta Şefler</h4>
+              <p>Dünya mutfaklarından uzmanlar</p>
+            </div>
+          </div>
+          <div class="about-feature">
+            <div class="about-feature-icon">🍷</div>
+            <div>
+              <h4>Seçkin Şarap Mahzeni</h4>
+              <p>1200+ etiketli koleksiyon</p>
+            </div>
+          </div>
+          <div class="about-feature">
+            <div class="about-feature-icon">🏛️</div>
+            <div>
+              <h4>Özel Salon</h4>
+              <p>Özel davete özel mekan</p>
+            </div>
+          </div>
+        </div>
+        <a href="reservation.html" class="btn btn-primary">Hemen Rezervasyon Yap</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SIGNATURE DISHES ===== -->
+<section class="dishes" id="dishes">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="section-label">İmza Lezzetler</span>
+      <h2 class="section-title">Şefin Özel Seçimleri</h2>
+      <div class="gold-line"></div>
+      <p class="section-subtitle">Her tabak, yılların birikimi ve tutku ile hazırlanmış bir gastronomi şaheserdir.</p>
+    </div>
+    <div class="dishes-grid">
+      <div class="dish-card reveal reveal-delay-1">
+        <div style="position:relative">
+          <div class="dish-img-placeholder">🦞</div>
+          <span class="dish-tag">Şef Seçimi</span>
+        </div>
+        <div class="dish-body">
+          <h3>Truffle Kaplamalı Istakoz</h3>
+          <p>Akdeniz ıstakozu, siyah truffle dilimleri, şampanya tereyağı sosu ve kaviarlı patates püresi eşliğinde.</p>
+          <div class="dish-footer">
+            <span class="dish-price">₺1.850</span>
+            <span class="dish-category">Ana Yemek</span>
+          </div>
+        </div>
+      </div>
+      <div class="dish-card reveal reveal-delay-2">
+        <div style="position:relative">
+          <div class="dish-img-placeholder">🥩</div>
+          <span class="dish-tag">En Çok Tercih</span>
+        </div>
+        <div class="dish-body">
+          <h3>Wagyu Bonfile — A5</h3>
+          <p>Japon A5 Wagyu dana bonfile, kızarmış porcini mantarı, şarap redüksiyonu ve zeytinyağlı ızgara kuşkonmaz.</p>
+          <div class="dish-footer">
+            <span class="dish-price">₺2.400</span>
+            <span class="dish-category">Ana Yemek</span>
+          </div>
+        </div>
+      </div>
+      <div class="dish-card reveal reveal-delay-3">
+        <div style="position:relative">
+          <div class="dish-img-placeholder">🍰</div>
+          <span class="dish-tag">Tatlı</span>
+        </div>
+        <div class="dish-body">
+          <h3>Altın Varak Soufflé</h3>
+          <p>Yükselen çikolata soufflé, vanilya dondurması, 24 ayar altın varak ve ahududu coulis ile.</p>
+          <div class="dish-footer">
+            <span class="dish-price">₺650</span>
+            <span class="dish-category">Tatlı</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div style="text-align:center;margin-top:3rem" class="reveal">
+      <a href="menu.html" class="btn btn-outline">Tüm Menüyü Görüntüle</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== DINING EXPERIENCE ===== -->
+<section class="experience" id="experience">
+  <div class="container">
+    <div class="experience-grid">
+      <div class="reveal">
+        <span class="section-label">Deneyim</span>
+        <h2 class="section-title">Sıradan Değil,<br>Olağanüstü Bir Akşam</h2>
+        <div class="gold-line" style="margin:1rem 0"></div>
+        <p>L'Étoile d'Or'da her akşam yemeği, başından sonuna kadar titizlikle tasarlanmış bir ritüeldir. Işıklandırmadan tabak sunumuna, müzikten servis akışına kadar her detay, misafirlerimizin keyifli anlar yaşaması için özenle kurgulanmaktadır.</p>
+        <div class="experience-stats">
+          <div class="stat-card reveal reveal-delay-1">
+            <span class="stat-num">85+</span>
+            <span class="stat-label">Koltuk Kapasitesi</span>
+          </div>
+          <div class="stat-card reveal reveal-delay-2">
+            <span class="stat-num">12</span>
+            <span class="stat-label">Uluslararası Ödül</span>
+          </div>
+          <div class="stat-card reveal reveal-delay-3">
+            <span class="stat-num">28</span>
+            <span class="stat-label">Uzman Şef</span>
+          </div>
+          <div class="stat-card reveal reveal-delay-4">
+            <span class="stat-num">4.9</span>
+            <span class="stat-label">Ortalama Puan</span>
+          </div>
+        </div>
+        <a href="reservation.html" class="btn btn-primary" style="margin-top:0.5rem">Masanızı Ayırtın</a>
+      </div>
+      <div class="experience-image-wrap reveal reveal-delay-2">
+        <div class="exp-img-main">
+          <span style="font-family:var(--font-serif);font-style:italic">Ambiyans & Atmosfer</span>
+        </div>
+        <div class="exp-img-frame"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CHEF ===== -->
+<section class="chef" id="chef">
+  <div class="container">
+    <div class="chef-grid">
+      <div class="chef-img-wrap reveal">
+        <div class="chef-img-placeholder">
+          👨‍🍳
+        </div>
+        <div class="chef-quote-card">
+          <span class="chef-quote-mark">"</span>
+          <p class="chef-quote-text">Her tabak bir hikaye anlatır. Benim işim, o hikayeyi en saf ve en güzel şekilde sunmak.</p>
+        </div>
+      </div>
+      <div class="chef-info reveal reveal-delay-2">
+        <span class="section-label">Baş Şefimiz</span>
+        <h2 class="chef-name">Jean-Michel Dubois</h2>
+        <p class="chef-title">Executive Chef & Kurucu Ortak</p>
+        <div class="gold-line" style="margin:1rem 0"></div>
+        <p>Paris'in en prestijli mutfak okullarından Le Cordon Bleu mezunu olan Jean-Michel, 25 yıllık kariyerinde Fransa, İtalya ve Japonya'nın Michelin yıldızlı restoranlarında çalışmıştır. İstanbul'u ikinci vatanı olarak benimseyerek 2009 yılında L'Étoile d'Or'u kurmuştur.</p>
+        <p style="margin-top:1rem">Fransız tekniklerini Türk ve Akdeniz malzemeleriyle harmanlayan benzersiz yaklaşımı, restoranı uluslararası gastronomi dünyasında ayrıcalıklı bir konuma taşımıştır.</p>
+        <div class="chef-awards">
+          <div class="award-item">
+            <span class="award-icon">🌟</span>
+            <div class="award-text">
+              <strong>Michelin Yıldızı</strong>
+              2019, 2021, 2023
+            </div>
+          </div>
+          <div class="award-item">
+            <span class="award-icon">🏆</span>
+            <div class="award-text">
+              <strong>En İyi Şef</strong>
+              Türkiye Gastronomi Ödülleri
+            </div>
+          </div>
+          <div class="award-item">
+            <span class="award-icon">📚</span>
+            <div class="award-text">
+              <strong>Yayımlanan Kitap</strong>
+              "Altın Mutfak" — 2022
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== GALLERY PREVIEW ===== -->
+<section class="gallery-preview" id="gallery">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="section-label">Galeri</span>
+      <h2 class="section-title">Gözlerinizle Hissedin</h2>
+      <div class="gold-line"></div>
+    </div>
+    <div class="gallery-grid reveal">
+      <div class="gallery-item">
+        <div class="gallery-placeholder" style="min-height:400px">🍽️</div>
+        <div class="gallery-overlay">
+          <div class="gallery-overlay-icon">+</div>
+        </div>
+      </div>
+      <div class="gallery-item">
+        <div class="gallery-placeholder">🥂</div>
+        <div class="gallery-overlay"><div class="gallery-overlay-icon">+</div></div>
+      </div>
+      <div class="gallery-item">
+        <div class="gallery-placeholder">🌿</div>
+        <div class="gallery-overlay"><div class="gallery-overlay-icon">+</div></div>
+      </div>
+      <div class="gallery-item">
+        <div class="gallery-placeholder">🕯️</div>
+        <div class="gallery-overlay"><div class="gallery-overlay-icon">+</div></div>
+      </div>
+      <div class="gallery-item">
+        <div class="gallery-placeholder">🍷</div>
+        <div class="gallery-overlay"><div class="gallery-overlay-icon">+</div></div>
+      </div>
+    </div>
+    <div class="gallery-cta reveal">
+      <a href="gallery.html" class="btn btn-outline">Tüm Galeriyi Görüntüle</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== RESERVATION CTA ===== -->
+<section class="reservation-cta" id="cta">
+  <div class="container">
+    <div class="cta-content reveal">
+      <span class="cta-eyebrow">Rezervasyon</span>
+      <h2>Unutulmaz Bir Akşam<br>İçin Masanızı Ayırtın</h2>
+      <div class="gold-line"></div>
+      <p>Özel günleriniz, romantik akşamlarınız ve iş yemekleriniz için L'Étoile d'Or'u tercih edin. Sizi en güzel şekilde ağırlamak için hazırız.</p>
+      <div class="cta-actions">
+        <a href="reservation.html" class="btn btn-primary">Online Rezervasyon</a>
+        <a href="contact.html" class="btn btn-outline">İletişime Geçin</a>
+      </div>
+      <p class="cta-phone">
+        Telefon ile rezervasyon: <a href="tel:+902121234567">+90 (212) 123 45 67</a>
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== LOCATION ===== -->
+<section class="location" id="location">
+  <div class="container">
+    <div class="location-grid">
+      <div class="location-info reveal">
+        <span class="section-label">Bize Ulaşın</span>
+        <h2>Neredeyiz?</h2>
+        <div class="gold-line" style="margin:1rem 0"></div>
+        <p>İstanbul'un tarihi ve kültürel merkezinde, Boğaz manzarasına hakim seçkin bir konumdayız.</p>
+        <div class="contact-items">
+          <div class="contact-item">
+            <div class="contact-icon">📍</div>
+            <div class="contact-detail">
+              <h4>Adres</h4>
+              <p>Çırağan Cad. No: 32, Beşiktaş, İstanbul 34349</p>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon">📞</div>
+            <div class="contact-detail">
+              <h4>Telefon</h4>
+              <a href="tel:+902121234567">+90 (212) 123 45 67</a>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon">✉️</div>
+            <div class="contact-detail">
+              <h4>E-posta</h4>
+              <a href="mailto:info@letoiledor.com.tr">info@letoiledor.com.tr</a>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon">🕐</div>
+            <div class="contact-detail">
+              <h4>Çalışma Saatleri</h4>
+              <p>Salı – Pazar: 18:00 – 23:30<br><small style="color:var(--text-muted)">Pazartesi kapalı</small></p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="reveal reveal-delay-2">
+        <div class="map-placeholder">
+          <span class="map-icon">📍</span>
+          <h3 style="color:var(--ivory);font-family:var(--font-serif)">L'Étoile d'Or</h3>
+          <p>Çırağan Cad. No: 32, Beşiktaş</p>
+          <a href="https://maps.google.com" target="_blank" rel="noopener" class="btn btn-outline" style="margin-top:0.5rem">Google Maps'te Aç</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="nav-logo">
+          <span class="nav-logo-main">L'Étoile d'Or</span>
+          <span class="nav-logo-sub">Fine Dining — İstanbul</span>
+        </div>
+        <p>İstanbul'un kalbinde, lüksün ve gastronominin buluştuğu eşsiz bir deneyim. Her anınızı özel kılmak için buradayız.</p>
+        <div class="social-links">
+          <a href="#" class="social-link" aria-label="Instagram">📷</a>
+          <a href="#" class="social-link" aria-label="Facebook">👥</a>
+          <a href="#" class="social-link" aria-label="Twitter">🐦</a>
+          <a href="#" class="social-link" aria-label="TripAdvisor">🍴</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Hızlı Erişim</h4>
+        <ul>
+          <li><a href="index.html">Ana Sayfa</a></li>
+          <li><a href="menu.html">Menü</a></li>
+          <li><a href="gallery.html">Galeri</a></li>
+          <li><a href="reservation.html">Rezervasyon</a></li>
+          <li><a href="contact.html">İletişim</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Deneyimler</h4>
+        <ul>
+          <li><a href="reservation.html">Akşam Yemeği</a></li>
+          <li><a href="reservation.html">Özel Daveti</a></li>
+          <li><a href="reservation.html">İş Yemeği</a></li>
+          <li><a href="reservation.html">Tasting Menü</a></li>
+          <li><a href="reservation.html">Şarap Eşleşmesi</a></li>
+        </ul>
+      </div>
+      <div class="footer-col footer-hours">
+        <h4>Çalışma Saatleri</h4>
+        <p><span>Salı – Cuma</span><br>18:00 – 23:00</p>
+        <p style="margin-top:0.75rem"><span>Cumartesi – Pazar</span><br>12:00 – 15:00 / 18:00 – 23:30</p>
+        <p style="margin-top:0.75rem;color:var(--text-muted);font-size:0.8rem">Pazartesi kapalı</p>
+        <a href="tel:+902121234567" class="btn btn-outline" style="margin-top:1.25rem;font-size:0.72rem;padding:0.6rem 1.2rem">
+          📞 Rezervasyon
+        </a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-copy">© 2024 L'Étoile d'Or. Tüm hakları saklıdır.</p>
+      <div class="footer-legal">
+        <a href="kvkk.html">KVKK</a>
+        <a href="privacy.html">Gizlilik Politikası</a>
+        <a href="terms.html">Kullanım Koşulları</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>
