@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="L'Étoile d'Or menüsü — Başlangıçlardan ana yemeklere, tatlılardan içeceklere kadar premium fine dining deneyimi.">
+  <title>Menü — L'Étoile d'Or</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/menu.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⭐</text></svg>">
+</head>
+<body>
+
+<nav class="navbar scrolled" id="navbar">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <span class="nav-logo-main">L'Étoile d'Or</span>
+      <span class="nav-logo-sub">Fine Dining — İstanbul</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Ana Sayfa</a></li>
+      <li><a href="menu.html" class="active">Menü</a></li>
+      <li><a href="gallery.html">Galeri</a></li>
+      <li><a href="contact.html">İletişim</a></li>
+    </ul>
+    <a href="reservation.html" class="btn btn-primary nav-cta">Rezervasyon</a>
+    <button class="nav-toggle" id="navToggle" aria-label="Menüyü Aç">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="index.html">Ana Sayfa</a>
+  <a href="menu.html">Menü</a>
+  <a href="gallery.html">Galeri</a>
+  <a href="contact.html">İletişim</a>
+  <a href="reservation.html" class="btn btn-primary">Rezervasyon Yap</a>
+</div>
+
+<!-- Page Hero -->
+<div class="page-hero">
+  <div class="container">
+    <span class="section-label">Gastronomi</span>
+    <h1>Menümüz</h1>
+    <p>Mevsimsel malzemeler ve Michelin tekniğiyle hazırlanmış, her lokmada farklı bir hikaye anlatan şaheserler.</p>
+    <div class="breadcrumb">
+      <a href="index.html">Ana Sayfa</a>
+      <span class="breadcrumb-sep">›</span>
+      <span>Menü</span>
+    </div>
+  </div>
+</div>
+
+<!-- Menu Section -->
+<section style="background:var(--black);padding:5rem 0">
+  <div class="container">
+
+    <!-- Tab Navigation -->
+    <div class="menu-nav reveal">
+      <button class="menu-tab active" data-tab="starters">🥗 Başlangıçlar</button>
+      <button class="menu-tab" data-tab="mains">🍽️ Ana Yemekler</button>
+      <button class="menu-tab" data-tab="desserts">🍰 Tatlılar</button>
+      <button class="menu-tab" data-tab="drinks">🍷 İçecekler</button>
+    </div>
+
+    <!-- STARTERS -->
+    <div class="menu-category active" id="tab-starters">
+      <div class="menu-category-header reveal">
+        <span class="section-label">İlk Dokunuş</span>
+        <h2>Başlangıçlar</h2>
+        <div class="gold-line"></div>
+      </div>
+      <div class="menu-items">
+        <div class="menu-item featured reveal">
+          <div class="menu-item-img">🦪</div>
+          <div class="menu-item-content">
+            <span class="featured-badge">⭐ Şef Önerisi</span>
+            <div class="menu-item-header">
+              <span class="menu-item-name">Truffle ve Beluga Havyarlı İstiridye</span>
+              <span class="menu-item-price">₺1.200</span>
+            </div>
+            <p class="menu-item-desc">Taze Marennes-Oléron istiridyesi, Beluga havyarı, siyah truffle vinaigrette ve deniz köpüğü ile servis edilir. Denizin derinliklerinden sofraya.</p>
+            <div class="menu-item-tags">
+              <span class="menu-tag">Deniz Ürünü</span>
+              <span class="menu-tag new">Yeni Sezon</span>
+            </div>
+          </div>
+        </div>
+        <div class="menu-item reveal reveal-delay-1">
+          <div class="menu-item-img">🥗</div>
+          <div class="menu-item-content">
+            <div class="menu-item-header">
+              <span class="menu-item-name">Burrata ve Heirloom Domates</span>
+              <span class="menu-item-price">₺450</span>
+            </div>
+            <p class="menu-item-desc">Taze burrata peyniri, renkli heirloom domatesler, fesleğen yağı ve 25 yıllık balsamik sirkesi ile.</p>
+            <div class="menu-item-tags"><span class="menu-tag veg">Vejetaryen</span></div>
+          </div>
+        </div>
+        <div class="menu-item reveal reveal-delay-2">
+          <div class="menu-item-img">🦐</div>
+          <div class="menu-item-content">
+            <div class="menu-item-header">
+              <span class="menu-item-name">Karides Carpaccio</span>
+              <span class="menu-item-price">₺580</span>
+            </div>
+            <p class="menu-item-desc">İnce dilimlenmiş çiğ karides, limon vinaigrette, dereotu yağı ve füme paprika ile marine edilmiş.</p>
+            <div class="menu-item-tags"><span class="menu-tag">Deniz Ürünü</span></div>
+          </div>
+        </div>
+        <div class="menu-item reveal reveal-delay-1">
+          <div class="menu-item-img">🍄</div>
+          <div class="menu-item-content">
+            <div class="menu-item-header">
+              <span class="menu-item-name">Porcini Mantarı Velouté</span>
+              <span class="menu-item-price">₺380</span>
+            </div>
+            <p class="menu-item-desc">Kremsi porcini mantarı çorbası, truffle yağı, kızarmış mantar cipsi ve taze kekik.</p>
+            <div class="menu-item-tags"><span class="menu-tag veg">Vejetaryen</span></div>
+          </div>
+        </div>
+        <div class="menu-item reveal reveal-delay-2">
+          <div class="menu-item-img">🐟</div>
+          <div class="menu-item-content">
+            <div class="menu-item-header">
+              <span class="menu-item-name">Somon Gravlax</span>
+              <span class="menu-item-price">₺520</span>
+            </div>
+            <p class="menu-item-desc">24 saat marine edilmiş somon, dereotu kremi, kapari, kırmızı soğan ve brioche kızartması ile.</p>
+            <div class="menu-item-tags"><span class="menu-tag">Balık</span></div>
+          </div>
+        </div>
+        <div class="menu-item reveal reveal-delay-3">
+          <div class="menu-item-img">🫐</div>
+          <div class="menu-item-content">
+            <div class="menu-item-header">
+              <span class="menu-item-name">Kazayağı Salatası</span>
+              <span class="menu-item-price">₺320</span>
+            </div>
+            <p class="menu-item-desc">Taze kazayağı, kavrulmuş ceviz, keçi peyniri, nar taneleri ve nar ekşisi sosu ile.</p>
+            <div class="menu-item-tags"><span class="menu-tag veg">Vejetaryen</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- MAINS -->
+    <div class="menu-category" id="tab-mains">
+      <div class="menu-category-header reveal">
+        <span class="section-label">Esas Lezzet</span>
+        <h2>Ana Yemekler</h2>
+        <div class="gold-line"></div>
+      </div>
+      <div class="menu-items">
+        <div class="menu-item featured reveal">
+          <div class="menu-item-img">🥩</div>
+          <div class="menu-item-content">
+            <span class="featured-badge">⭐ İmza Tabak</span>
+            <div class="menu-item-header">
+              <span class="menu-item-name">Wagyu A5 Bonfile — Truffle Püreli</span>
+              <span class="menu-item-price">₺2.400</span>
+            </div>
+            <p class="menu-item-desc">Japon Wagyu A5 bonfile, siyah truffle püresi, şarap redüksiyon sosu, kızarmış porcini mantarı ve zeytinyağlı ızgara kuşkonmaz ile servis edilir.</p>
+            <div class="menu-item-tags"><span class="menu-tag">Etli</span><span class="menu-tag new">Şef Seçimi</span></div>
+          </div>
+        </div>
+        <div class="menu-item reveal reveal-delay-1">
+          <div class="menu-item-img">🦞</div>
+          <div class="menu-item-content">
+            <div class="menu-item-header">
+              <span class="menu-item-name">Truffle Kaplamalı Akdeniz Istakozu</span>
+              <span class="menu-item-price">₺1.850</span>
+            </div>
+            <p class="menu-item-desc">Taze Akdeniz ıstakozu, siyah truffle, şampanya tereyağı sosu ve kaviarlı patates püresi eşliğinde.</p>
+            <div class="menu-item-tags"><span class="menu-tag">Deniz Ürünü</span></div>
+          </div>
+        </div>
+        <div class="menu-item reveal reveal-delay-2">
+          <div class="menu-item-img">🐟</div>
+          <div class="menu-item-content">
+            <div class="menu-item-header">
+              <span class="menu-item-name">Fırın Levrek — Bouillabaisse Sosu</span>
+              <span class="menu-item-price">₺980</span>
+            </div>
+            <p class="menu-item-desc">Taze levrek fileto, Provence bouillabaisse sosu, safran risotto ve deniz tarağı ile fırınlanmış.</p>
+            <div class="menu-item-tags"><span class="menu-tag">Balık</span></div>
+          </div>
+        </div>
+        <div class="menu-item reveal reveal-delay-1">
+          <div class="menu-item-img">🍗</div>
+          <div class="menu-item-content">
+            <div class="menu-item-header">
+              <span class="menu-item-name">Bresse Tavuğu — Truffle Altında</span>
+              <span class="menu-item-price">₺1.150</span>
+            </div>
+            <p class="menu-item-desc">Fransız Bresse tavuğu, deri altı truffle, kremalı mantar sos ve fırın kök sebzeler.</p>
+            <div class="menu-item-tags"><span class="menu-tag">Kümes</span></div>
+          </div>
+        </div>
+        <div class="menu-item reveal reveal-delay-2">
+          <div class="menu-item-img">🥩</div>
+          <div class="menu-item-content">
+            <div class="menu-item-header">
+              <span class="menu-item-name">Rack of Lamb — Herb Crusted</span>
+              <span class="menu-item-price">₺1.400</span>
+            </div>
+            <p class="menu-item-desc">Otlu kabuklu kuzu pirzola, fırında sebzeler, kırmızı şarap jus ve nane ile frenk soğanı yağı.</p>
+            <div class="menu-item-tags"><span class="menu-tag">Etli</span></div>
+          </div>
+        </div>
+        <div class="menu-item reveal reveal-delay-3">
+          <div class="menu-item-img">🌱</div>
+          <div class="menu-item-content">
+            <div class="menu-item-header">
+              <span class="menu-item-name">Truffle Risotto — Parmesan</span>
+              <span class="menu-item-price">₺780</span>
+            </div>
+            <p class="menu-item-desc">Arborio pirinç, siyah truffle, 36 ay olgunlaştırılmış Parmesan, beyaz şarap ve taze fesleğen.</p>
+            <div class="menu-item-tags"><span class="menu-tag veg">Vejetaryen</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- DESSERTS -->
+    <div class="menu-category" id="tab-desserts">
+      <div class="menu-category-header reveal">
+        <span class="section-label">Tatlı Final</span>
+        <h2>Tatlılar</h2>
+        <div class="gold-line"></div>
+      </div>
+      <div class="menu-items">
+        <div class="menu-item featured reveal">
+          <div class="menu-item-img">🍫</div>
+          <div class="menu-item-content">
+            <span class="featured-badge">⭐ Şef Önerisi</span>
+            <div class="menu-item-header">
+              <span class="menu-item-name">Altın Varak Çikolata Soufflé</span>
+              <span class="menu-item-price">₺650</span>
+            </div>
+            <p class="menu-item-desc">Yükselen Valrhona çikolata soufflé, Tahiti vanilya dondurması, 24 ayar altın varak ve taze ahududu coulis. (15 dakika hazırlık süresi)</p>
+            <div class="menu-item-tags"><span class="menu-tag">Çikolatalı</span><span class="menu-tag new">Önceden Sipariş</span></div>
+          </div>
+        </div>
+        <div class="menu-item reveal reveal-delay-1">
+          <div class="menu-item-img">🍮</div>
+          <div class="menu-item-content">
+            <div class="menu-item-header">
+              <span class="menu-item-name">Crème Brûlée — Lavanta</span>
+              <span class="menu-item-price">₺420</span>
+            </div>
+            <p class="menu-item-desc">Provence lavantası ile infüze edilmiş klasik crème brûlée, taze mevsim meyveleri ve nane ile.</p>
+            <div class="menu-item-tags"><span class="menu-tag veg">Vejetaryen</span></div>
+          </div>
+        </div>
+        <div class="menu-item reveal reveal-delay-2">
+          <div class="menu-item-img">🫐</div>
+          <div class="menu-item-content">
+            <div class="menu-item-header">
+              <span class="menu-item-name">Mille-Feuille — Karamel</span>
+              <span class="menu-item-price">₺480</span>
+            </div>
+            <p class="menu-item-desc">Crispy feuilletage, tuzlu karamel krema, mango coulis ve taze yaban mersini ile.</p>
+            <div class="menu-item-tags"><span class="menu-tag veg">Vejetaryen</span></div>
+          </div>
+        </div>
+        <div class="menu-item reveal reveal-delay-1">
+          <div class="menu-item-img">🍓</div>
+          <div class="menu-item-content">
+            <div class="menu-item-header">
+              <span class="menu-item-name">Fraisier — Vanilya Kreması</span>
+              <span class="menu-item-price">₺440</span>
+            </div>
+            <p class="menu-item-desc">Taze çilek ve vanilya kreması ile hazırlanan geleneksel Fransız pastası, pişmaniye ve altın tozu.</p>
+            <div class="menu-item-tags"><span class="menu-tag veg">Vejetaryen</span></div>
+          </div>
+        </div>
+        <div class="menu-item reveal reveal-delay-2">
+          <div class="menu-item-img">🧁</div>
+          <div class="menu-item-content">
+            <div class="menu-item-header">
+              <span class="menu-item-name">Tasting Dessert Tabağı</span>
+              <span class="menu-item-price">₺780</span>
+            </div>
+            <p class="menu-item-desc">5 farklı mini tatlı: soufflé, crème brûlée, meyve tart, çikolata trüf ve dondurma seçkisi.</p>
+            <div class="menu-item-tags"><span class="menu-tag veg">Vejetaryen</span><span class="menu-tag">2 kişilik</span></div>
+          </div>
+        </div>
+        <div class="menu-item reveal reveal-delay-3">
+          <div class="menu-item-img">🍦</div>
+          <div class="menu-item-content">
+            <div class="menu-item-header">
+              <span class="menu-item-name">Dondurma Seçkisi</span>
+              <span class="menu-item-price">₺380</span>
+            </div>
+            <p class="menu-item-desc">Günlük hazırlanan 3 top dondurma veya sorbet seçkisi, taze mevsim meyveleri ve wafer ile.</p>
+            <div class="menu-item-tags"><span class="menu-tag veg">Vejetaryen</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- DRINKS -->
+    <div class="menu-category" id="tab-drinks">
+      <div class="menu-category-header reveal">
+        <span class="section-label">İçecek Seçkisi</span>
+        <h2>İçecekler</h2>
+        <div class="gold-line"></div>
+      </div>
+      <div class="drinks-grid reveal">
+        <div class="drink-card">
+          <div class="drink-icon">🥂</div>
+          <div class="drink-name">Dom Pérignon Vintage</div>
+          <p class="drink-desc">Fransa, Şampanya bölgesi — ekstra kuru, zarif köpük</p>
+          <div class="drink-price">₺4.800 / şişe</div>
+        </div>
+        <div class="drink-card">
+          <div class="drink-icon">🍷</div>
+          <div class="drink-name">Château Margaux 2015</div>
+          <p class="drink-desc">Bordeaux, Fransa — derin kırmızı, kadifemsi tanin</p>
+          <div class="drink-price">₺8.500 / şişe</div>
+        </div>
+        <div class="drink-card">
+          <div class="drink-icon">🍾</div>
+          <div class="drink-name">Puligny-Montrachet</div>
+          <p class="drink-desc">Bourgogne, Fransa — Chardonnay, zarif ve mineralli</p>
+          <div class="drink-price">₺2.200 / şişe</div>
+        </div>
+        <div class="drink-card">
+          <div class="drink-icon">🍸</div>
+          <div class="drink-name">Signature Cocktail</div>
+          <p class="drink-desc">"L'Étoile" — St-Germain, gül suyu, altın varak</p>
+          <div class="drink-price">₺480 / bardak</div>
+        </div>
+        <div class="drink-card">
+          <div class="drink-icon">☕</div>
+          <div class="drink-name">Kopi Luwak Kahve</div>
+          <p class="drink-desc">Endonezya kökenli dünyanın en nadir kahvesi</p>
+          <div class="drink-price">₺650 / fincan</div>
+        </div>
+        <div class="drink-card">
+          <div class="drink-icon">🫖</div>
+          <div class="drink-name">Darjeeling First Flush</div>
+          <p class="drink-desc">Hindistan, Darjeeling — premium siyah çay</p>
+          <div class="drink-price">₺320 / demlik</div>
+        </div>
+        <div class="drink-card">
+          <div class="drink-icon">🥃</div>
+          <div class="drink-name">Macallan 18 Yıllık</div>
+          <p class="drink-desc">İskoçya — tek malt viski, orman meyveleri notu</p>
+          <div class="drink-price">₺1.200 / kadeh</div>
+        </div>
+        <div class="drink-card">
+          <div class="drink-icon">💧</div>
+          <div class="drink-name">Premium Su Seçkisi</div>
+          <p class="drink-desc">Evian, Perrier, San Pellegrino veya Acqua Panna</p>
+          <div class="drink-price">₺120 / şişe</div>
+        </div>
+        <div class="drink-card">
+          <div class="drink-icon">🍹</div>
+          <div class="drink-name">Virgin Mocktail Seçkisi</div>
+          <p class="drink-desc">Taze meyve bazlı, alkölsüz özel karışımlar</p>
+          <div class="drink-price">₺280 / bardak</div>
+        </div>
+      </div>
+      <div class="menu-note reveal">
+        <p><strong>Şarap Eşleştirme Danışmanlığı:</strong> Sommelier'imiz, seçtiğiniz yemekler için özel şarap önerilerinde bulunmaktan memnuniyet duyar.</p>
+      </div>
+    </div>
+
+    <!-- Allergy Note -->
+    <div class="menu-note reveal" style="margin-top:3rem">
+      <p><strong>Alerji Uyarısı:</strong> Menümüz gluten, süt ürünleri, yumurta, kabuklu deniz ürünleri ve fındık içerebilir. Alerji bilgilerinizi lütfen rezervasyon sırasında veya servis ekibimize bildirin. Fiyatlarımıza KDV dahildir. Tüm fiyatlar kişi başıdır.</p>
+    </div>
+
+    <!-- CTA -->
+    <div style="text-align:center;margin-top:4rem" class="reveal">
+      <span class="section-label" style="display:block;text-align:center">Rezervasyon</span>
+      <h2 style="color:var(--ivory);margin-bottom:1rem">Bu Lezzetleri Deneyimlemek İster misiniz?</h2>
+      <a href="reservation.html" class="btn btn-primary" style="margin-top:0.5rem">Masa Ayırt</a>
+    </div>
+
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="nav-logo">
+          <span class="nav-logo-main">L'Étoile d'Or</span>
+          <span class="nav-logo-sub">Fine Dining — İstanbul</span>
+        </div>
+        <p>İstanbul'un kalbinde, lüksün ve gastronominin buluştuğu eşsiz bir deneyim.</p>
+        <div class="social-links">
+          <a href="#" class="social-link" aria-label="Instagram">📷</a>
+          <a href="#" class="social-link" aria-label="Facebook">👥</a>
+          <a href="#" class="social-link" aria-label="Twitter">🐦</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Sayfalar</h4>
+        <ul>
+          <li><a href="index.html">Ana Sayfa</a></li>
+          <li><a href="menu.html">Menü</a></li>
+          <li><a href="gallery.html">Galeri</a></li>
+          <li><a href="reservation.html">Rezervasyon</a></li>
+          <li><a href="contact.html">İletişim</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>İletişim</h4>
+        <ul>
+          <li><a href="tel:+902121234567">+90 (212) 123 45 67</a></li>
+          <li><a href="mailto:info@letoiledor.com.tr">info@letoiledor.com.tr</a></li>
+          <li><a href="#">Çırağan Cad. No:32, Beşiktaş</a></li>
+        </ul>
+      </div>
+      <div class="footer-col footer-hours">
+        <h4>Çalışma Saatleri</h4>
+        <p><span>Salı – Cuma</span><br>18:00 – 23:00</p>
+        <p style="margin-top:0.75rem"><span>Cumartesi – Pazar</span><br>12:00 – 23:30</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-copy">© 2024 L'Étoile d'Or. Tüm hakları saklıdır.</p>
+      <div class="footer-legal">
+        <a href="kvkk.html">KVKK</a>
+        <a href="privacy.html">Gizlilik</a>
+        <a href="terms.html">Kullanım Koşulları</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+<script>
+  // Menu tabs
+  document.querySelectorAll('.menu-tab').forEach(tab => {
+    tab.addEventListener('click', function() {
+      document.querySelectorAll('.menu-tab').forEach(t => t.classList.remove('active'));
+      document.querySelectorAll('.menu-category').forEach(c => c.classList.remove('active'));
+      this.classList.add('active');
+      document.getElementById('tab-' + this.dataset.tab).classList.add('active');
+      // Re-trigger reveal for newly visible items
+      setTimeout(() => {
+        document.querySelectorAll('.menu-category.active .reveal').forEach(el => {
+          el.classList.add('visible');
+        });
+      }, 50);
+    });
+  });
+</script>
+</body>
+</html>
