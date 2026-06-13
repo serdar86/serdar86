@@ -2201,9 +2201,16 @@
     ------------------------------------------------------------------ */
     const form = document.getElementById('resForm');
 
-    // Set today as minimum date
+    // Set today as minimum date using local time components (not UTC) so users
+    // in negative UTC offsets don't get bumped to tomorrow during evening hours.
     const dateEl = document.getElementById('f-date');
-    dateEl.min = new Date().toISOString().split('T')[0];
+    (function () {
+        const now = new Date();
+        const yyyy = now.getFullYear();
+        const mm   = String(now.getMonth() + 1).padStart(2, '0');
+        const dd   = String(now.getDate()).padStart(2, '0');
+        dateEl.min = `${yyyy}-${mm}-${dd}`;
+    })();
 
     // Clear error on interaction
     ['f-name','f-phone','f-email','f-date','f-time','f-guests'].forEach(id => {
