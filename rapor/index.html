@@ -1,0 +1,886 @@
+<title>Hangi Uygulama Tutar</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans+Condensed:wght@500;600;700&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap">
+<style>
+  :root {
+    --paper:      #E7EBEF;
+    --surface:    #FFFFFF;
+    --surface-2:  #F2F5F8;
+    --ink:        #101820;
+    --ink-2:      #384654;
+    --muted:      #64748B;
+    --rule:       #CBD4DD;
+    --rule-soft:  #DFE5EB;
+
+    --signal:     #9A6B04;
+    --signal-bg:  #FBF0D6;
+    --live:       #1F7A4D;
+    --live-bg:    #DFF0E6;
+    --cut:        #B03A31;
+    --cut-bg:     #F8E2DF;
+    --wait:       #4B5B70;
+
+    --f-disp: "IBM Plex Sans Condensed", "Helvetica Neue", Arial, sans-serif;
+    --f-body: "IBM Plex Sans", "Segoe UI", Roboto, sans-serif;
+    --f-mono: "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, monospace;
+
+    --shadow: 0 1px 2px rgba(16,24,32,.06), 0 6px 18px -10px rgba(16,24,32,.18);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --paper:      #0B1117;
+      --surface:    #121B24;
+      --surface-2:  #18232E;
+      --ink:        #E4EAF0;
+      --ink-2:      #B7C4D1;
+      --muted:      #8595A6;
+      --rule:       #263442;
+      --rule-soft:  #1E2A36;
+
+      --signal:     #E9BE55;
+      --signal-bg:  #2C2312;
+      --live:       #55C48C;
+      --live-bg:    #12291E;
+      --cut:        #E08078;
+      --cut-bg:     #2B1714;
+      --wait:       #93A3B5;
+      --shadow: 0 1px 2px rgba(0,0,0,.4), 0 8px 22px -12px rgba(0,0,0,.7);
+    }
+  }
+  :root[data-theme="dark"] {
+    --paper:      #0B1117;
+    --surface:    #121B24;
+    --surface-2:  #18232E;
+    --ink:        #E4EAF0;
+    --ink-2:      #B7C4D1;
+    --muted:      #8595A6;
+    --rule:       #263442;
+    --rule-soft:  #1E2A36;
+    --signal:     #E9BE55;
+    --signal-bg:  #2C2312;
+    --live:       #55C48C;
+    --live-bg:    #12291E;
+    --cut:        #E08078;
+    --cut-bg:     #2B1714;
+    --wait:       #93A3B5;
+    --shadow: 0 1px 2px rgba(0,0,0,.4), 0 8px 22px -12px rgba(0,0,0,.7);
+  }
+
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--f-body);
+    font-size: 16px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+  .wrap {
+    max-width: 1080px;
+    margin: 0 auto;
+    padding-inline: 20px;
+    padding-block: 0 72px;
+  }
+  .prose { max-width: 68ch; }
+
+  h1, h2, h3, h4 { font-family: var(--f-disp); text-wrap: balance; margin: 0; line-height: 1.12; }
+  h1 { font-size: clamp(2.4rem, 7vw, 4rem); font-weight: 700; letter-spacing: -.02em; }
+  h2 { font-size: clamp(1.5rem, 3.6vw, 2.05rem); font-weight: 600; letter-spacing: -.01em; }
+  h3 { font-size: 1.2rem; font-weight: 600; }
+  p { margin: 0; }
+
+  .eyebrow {
+    font-family: var(--f-mono);
+    font-size: .72rem;
+    font-weight: 500;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+
+  /* ---------- header ---------- */
+  header.masthead {
+    border-bottom: 1px solid var(--rule);
+    background: var(--surface);
+  }
+  .masthead-inner {
+    max-width: 1080px; margin: 0 auto;
+    padding-inline: 20px; padding-block: 34px 40px;
+    display: flex; flex-direction: column; gap: 20px;
+  }
+  .lede { font-size: 1.12rem; color: var(--ink-2); max-width: 62ch; }
+  .lede strong { color: var(--ink); font-weight: 600; }
+
+  .constraint {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 14px;
+    align-items: start;
+    background: var(--signal-bg);
+    border: 1px solid color-mix(in srgb, var(--signal) 32%, transparent);
+    border-radius: 3px;
+    padding: 16px 18px;
+    max-width: 68ch;
+  }
+  .constraint .tag {
+    font-family: var(--f-mono); font-size: .68rem; font-weight: 600;
+    letter-spacing: .1em; text-transform: uppercase;
+    color: var(--signal); white-space: nowrap; padding-top: 3px;
+  }
+  .constraint p { font-size: .94rem; color: var(--ink-2); }
+  .constraint p + p { margin-top: 8px; }
+
+  /* ---------- sections ---------- */
+  section { padding-block: 56px 0; }
+  .sec-head { display: flex; flex-direction: column; gap: 10px; margin-bottom: 28px; }
+  .sec-head p { color: var(--ink-2); max-width: 66ch; }
+
+  /* ---------- verdict legend (schematic) ---------- */
+  .legend-note {
+    font-family: var(--f-mono); font-size: .7rem; letter-spacing: .08em;
+    text-transform: uppercase; color: var(--muted); margin-bottom: 14px;
+  }
+  .verdicts { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 1px;
+              background: var(--rule-soft); border: 1px solid var(--rule-soft); border-radius: 3px; overflow: hidden; }
+  .verdict { background: var(--surface); padding: 20px 18px; display: flex; flex-direction: column; gap: 12px; }
+  .verdict h3 { font-size: 1rem; letter-spacing: .01em; }
+  .verdict p { font-size: .86rem; color: var(--ink-2); }
+  .lanes { display: flex; flex-direction: column; gap: 4px; }
+  .lane { height: 7px; border-radius: 1px; background: var(--rule); }
+  .lane.live { background: var(--live); }
+  .lane.cut  { background: var(--cut); }
+  .lane.new  { background: var(--signal); }
+  .lane.dim  { background: var(--wait); opacity: .45; }
+  .axis {
+    display: flex; justify-content: space-between;
+    font-family: var(--f-mono); font-size: .66rem; color: var(--muted);
+    border-top: 1px dashed var(--rule); padding-top: 5px; margin-top: 2px;
+  }
+
+  /* ---------- tier + cards ---------- */
+  .tier-bar {
+    display: flex; align-items: baseline; gap: 14px; flex-wrap: wrap;
+    border-top: 2px solid var(--ink); padding-top: 10px; margin: 44px 0 22px;
+  }
+  .tier-bar h3 { font-size: 1.05rem; }
+  .tier-bar span { font-size: .9rem; color: var(--muted); }
+
+  .cards { display: grid; gap: 18px; }
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--rule-soft);
+    border-radius: 3px;
+    box-shadow: var(--shadow);
+    padding: 24px;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+  @media (min-width: 760px) { .card { grid-template-columns: 1.35fr 1fr; gap: 34px; } }
+
+  .card-head { display: flex; flex-direction: column; gap: 8px; margin-bottom: 4px; }
+  .rank {
+    font-family: var(--f-mono); font-size: .72rem; font-weight: 600;
+    letter-spacing: .1em; color: var(--muted);
+  }
+  .card h3 { font-size: 1.35rem; }
+  .card-body p { font-size: .95rem; color: var(--ink-2); }
+  .card-body p + p { margin-top: 12px; }
+  .card-body em { color: var(--ink); font-style: normal; font-weight: 600; }
+
+  .facts { display: flex; flex-direction: column; gap: 0; align-self: start; }
+  .fact {
+    display: grid; grid-template-columns: 90px 1fr; gap: 12px;
+    padding: 10px 0; border-top: 1px solid var(--rule-soft);
+    font-size: .86rem;
+  }
+  .fact:first-child { border-top: none; padding-top: 0; }
+  .fact dt {
+    font-family: var(--f-mono); font-size: .68rem; letter-spacing: .07em;
+    text-transform: uppercase; color: var(--muted); padding-top: 2px;
+  }
+  .fact dd { margin: 0; color: var(--ink-2); }
+  .fact dd code {
+    font-family: var(--f-mono); font-size: .82em;
+    background: var(--surface-2); border: 1px solid var(--rule-soft);
+    border-radius: 2px; padding: 1px 5px; color: var(--ink);
+    display: inline-block; margin: 1px 2px 1px 0;
+  }
+
+  .pill {
+    display: inline-flex; align-items: center; gap: 6px;
+    font-family: var(--f-mono); font-size: .68rem; font-weight: 600;
+    letter-spacing: .08em; text-transform: uppercase;
+    padding: 3px 9px; border-radius: 2px; width: fit-content;
+  }
+  .pill.go   { background: var(--live-bg); color: var(--live); }
+  .pill.care { background: var(--signal-bg); color: var(--signal); }
+  .pill.stop { background: var(--cut-bg); color: var(--cut); }
+
+  .warn {
+    border-left: 3px solid var(--cut);
+    background: var(--cut-bg);
+    padding: 11px 14px; border-radius: 0 2px 2px 0;
+    font-size: .88rem; color: var(--ink-2);
+  }
+  .warn b { color: var(--cut); }
+
+  /* ---------- table ---------- */
+  .tablewrap { overflow-x: auto; border: 1px solid var(--rule-soft); border-radius: 3px; background: var(--surface); }
+  table { border-collapse: collapse; width: 100%; min-width: 660px; font-size: .88rem; }
+  th, td { text-align: left; padding: 11px 14px; border-bottom: 1px solid var(--rule-soft); vertical-align: top; }
+  thead th {
+    font-family: var(--f-mono); font-size: .67rem; letter-spacing: .08em;
+    text-transform: uppercase; color: var(--muted); font-weight: 600;
+    background: var(--surface-2); border-bottom: 1px solid var(--rule);
+  }
+  tbody tr:last-child td { border-bottom: none; }
+  td.num { font-family: var(--f-mono); font-variant-numeric: tabular-nums; white-space: nowrap; }
+  td strong { font-weight: 600; color: var(--ink); }
+
+  /* ---------- steps ---------- */
+  ol.steps { list-style: none; counter-reset: s; margin: 0; padding: 0;
+             display: grid; gap: 1px; background: var(--rule-soft);
+             border: 1px solid var(--rule-soft); border-radius: 3px; overflow: hidden; }
+  ol.steps li {
+    counter-increment: s; background: var(--surface); padding: 18px 20px;
+    display: grid; grid-template-columns: 42px 1fr; gap: 14px; align-items: start;
+  }
+  ol.steps li::before {
+    content: counter(s, decimal-leading-zero);
+    font-family: var(--f-mono); font-size: .8rem; font-weight: 600;
+    color: var(--signal); padding-top: 2px;
+  }
+  ol.steps h4 { font-size: .98rem; margin-bottom: 5px; }
+  ol.steps p { font-size: .9rem; color: var(--ink-2); }
+  ol.steps code {
+    font-family: var(--f-mono); font-size: .84em; background: var(--surface-2);
+    border: 1px solid var(--rule-soft); border-radius: 2px; padding: 1px 5px; color: var(--ink);
+  }
+
+  /* ---------- tool block ---------- */
+  .tool { background: var(--surface); border: 1px solid var(--rule-soft); border-radius: 3px; padding: 24px; }
+  pre {
+    margin: 14px 0 0; overflow-x: auto; background: var(--surface-2);
+    border: 1px solid var(--rule-soft); border-radius: 2px; padding: 14px 16px;
+    font-family: var(--f-mono); font-size: .82rem; line-height: 1.7; color: var(--ink-2);
+  }
+  pre b { color: var(--ink); font-weight: 600; }
+
+  /* ---------- sources ---------- */
+  .sources { columns: 2; column-gap: 34px; font-size: .84rem; }
+  @media (max-width: 640px) { .sources { columns: 1; } }
+  .sources li { break-inside: avoid; margin-bottom: 9px; color: var(--muted); }
+  a { color: var(--ink); text-decoration-color: var(--rule); text-underline-offset: 3px; }
+  a:hover { text-decoration-color: var(--signal); }
+  a:focus-visible { outline: 2px solid var(--signal); outline-offset: 2px; border-radius: 1px; }
+
+  footer { margin-top: 56px; padding-top: 20px; border-top: 1px solid var(--rule);
+           font-size: .82rem; color: var(--muted); }
+</style>
+
+<header class="masthead">
+  <div class="masthead-inner">
+    <p class="eyebrow">Meta Ad Library · reklam ömrü analizi · 14 Eylül 2026</p>
+    <h1>Hangi Uygulama Tutar</h1>
+    <p class="lede">
+      Soru şuydu: hangi uygulamalar viral olur, ve bunu reklam verisinden nasıl anlarız?
+      Cevap tek bir metrikte: <strong>reklam ne kadar süre açık kaldı.</strong> Reklamveren
+      para kaybettiren reklamı aylarca ödemez. Ama 2026'da bu kuralın delikleri var —
+      aşağıda hem delikleri hem de deliklerden arındırılmış sıralamayı bulacaksınız.
+    </p>
+
+    <div class="constraint">
+      <span class="tag">Önce<br>şu kısıt</span>
+      <div>
+        <p>
+          Meta, <strong>durdurulmuş reklamları yalnızca AB ve İngiltere için</strong> saklar —
+          yaklaşık bir yıl geriye. ABD veya Türkiye hedefli bir reklam kapatıldığında
+          Ad Library'den tamamen kaybolur.
+        </p>
+        <p>
+          Sonuç: "reklam ne zaman kapandı" analizi <strong>sadece AB üzerinden</strong> yapılabilir.
+          Aynı şey API için de geçerli — <code style="font-family:var(--f-mono);font-size:.85em">ad_type=ALL</code>
+          ticari reklamları yalnızca AB/UK sorgularında döndürür. Bu yüzden aşağıdaki her
+          "Ad Library'de ara" talimatı ülke olarak Almanya/Hollanda/Fransa'yı işaret ediyor.
+        </p>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <section>
+    <div class="sec-head">
+      <p class="eyebrow">Yöntem</p>
+      <h2>Uzun yaşayan reklam ne anlatır, ne anlatmaz</h2>
+      <p>
+        Klasik kural — "90 günü geçen reklam kendini ödüyordur" — hâlâ doğru ama artık
+        tek başına yetmiyor. Meta'nın Andromeda sıralama sistemi kreatif sinyallerine daha
+        sert ağırlık veriyor; üç yıl önce altı hafta dayanan bir konsept bugün iki-üç haftada
+        kitlesini yakıyor. Aynı anda cost-cap ve Advantage+ ile çalışan hesaplar kazanmayan
+        reklamı da kapatmadan bırakabiliyor. Yani <em>eski reklam, bazen kanıt değil sadece
+        budanmamış reklamdır.</em>
+      </p>
+      <p>
+        Bu yüzden ömrü tek başına değil, <strong>yenileme temposuyla birlikte</strong> okumak
+        gerekiyor. Dört imza şu şekilde ayrışıyor:
+      </p>
+    </div>
+
+    <p class="legend-note">Şematik — her şerit bir reklamın ömrü, sol kenar açılış</p>
+    <div class="verdicts">
+      <div class="verdict">
+        <span class="pill go">Para basıyor</span>
+        <div class="lanes">
+          <div class="lane live" style="width:100%"></div>
+          <div class="lane live" style="width:74%"></div>
+          <div class="lane live" style="width:61%"></div>
+          <div class="lane new" style="width:18%; margin-left:82%"></div>
+          <div class="lane new" style="width:14%; margin-left:86%"></div>
+          <div class="lane cut" style="width:9%; margin-left:44%"></div>
+          <div class="axis"><span>12 ay önce</span><span>bugün</span></div>
+        </div>
+        <p>Aylardır ayakta duran reklamların <strong>yanında</strong> sürekli yeni kreatif
+        açılıyor. Hesap hâlâ ölçek arıyor demektir. Kopyalanacak model budur.</p>
+      </div>
+
+      <div class="verdict">
+        <span class="pill care">Ölçekleniyor</span>
+        <div class="lanes">
+          <div class="lane new" style="width:26%; margin-left:74%"></div>
+          <div class="lane new" style="width:22%; margin-left:78%"></div>
+          <div class="lane new" style="width:19%; margin-left:81%"></div>
+          <div class="lane new" style="width:15%; margin-left:85%"></div>
+          <div class="lane cut" style="width:7%; margin-left:66%"></div>
+          <div class="lane dim" style="width:0%"></div>
+          <div class="axis"><span>12 ay önce</span><span>bugün</span></div>
+        </div>
+        <p>Her şey yeni, henüz 90 günü dolan yok. Yeni doğan bir kazanan olabilir —
+        <strong>en erken sinyal burada.</strong> Rakip daha yerleşmeden nişe girmek isterseniz
+        bu imzayı arayın.</p>
+      </div>
+
+      <div class="verdict">
+        <span class="pill stop">Test ediyor</span>
+        <div class="lanes">
+          <div class="lane cut" style="width:6%; margin-left:8%"></div>
+          <div class="lane cut" style="width:5%; margin-left:24%"></div>
+          <div class="lane cut" style="width:7%; margin-left:39%"></div>
+          <div class="lane cut" style="width:5%; margin-left:57%"></div>
+          <div class="lane cut" style="width:6%; margin-left:71%"></div>
+          <div class="lane new" style="width:11%; margin-left:88%"></div>
+          <div class="axis"><span>12 ay önce</span><span>bugün</span></div>
+        </div>
+        <p>Reklamların neredeyse tamamı iki hafta içinde kesilmiş. Niş henüz çözülmemiş.
+        Ya ürün tutmuyor ya da mesaj bulunamamış — <strong>pazar kanıtı sayılmaz.</strong></p>
+      </div>
+
+      <div class="verdict">
+        <span class="pill stop">Unutulmuş</span>
+        <div class="lanes">
+          <div class="lane dim" style="width:100%"></div>
+          <div class="lane dim" style="width:96%"></div>
+          <div class="lane dim" style="width:0%"></div>
+          <div class="lane dim" style="width:0%"></div>
+          <div class="lane dim" style="width:0%"></div>
+          <div class="lane dim" style="width:0%"></div>
+          <div class="axis"><span>12 ay önce</span><span>bugün</span></div>
+        </div>
+        <p>Çok eski reklamlar var ama aylardır <strong>tek bir yeni kreatif yok.</strong>
+        En yaygın tuzak: kapatılmayı unutmuş hesabı kazanan sanmak. Skorunu yarıya düşürün.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <p class="eyebrow">Sıralama</p>
+      <h2>Sekiz niş, üç kategori</h2>
+      <p>
+        Sıralama kriteri "en büyük pazar" değil — <strong>solo bir geliştiricinin reklamla
+        kâr edebileceği</strong> nişler. Yani: kreatifi kendini satan, teknik barı düşük,
+        abonelik fiyatı CPI'yi kaldıran, ve henüz tek bir devin ezmediği kategoriler.
+      </p>
+    </div>
+
+    <div class="tier-bar">
+      <h3>A Kademesi</h3>
+      <span>Başlanacak yer — kreatif kolaylığı yüksek, rekabet henüz bölünebilir</span>
+    </div>
+
+    <div class="cards">
+
+      <article class="card">
+        <div class="card-body">
+          <div class="card-head">
+            <span class="rank">01</span>
+            <h3>Uyku &amp; horlama kaydı</h3>
+            <span class="pill go">En iyi risk/ödül</span>
+          </div>
+          <p>
+            Bu nişin gücü üründe değil, <em>reklamın kendisinde.</em> Kreatif zaten hazır:
+            kullanıcıya kendi horlamasını geri dinletiyorsunuz. "Gece ne yaptığını duy"
+            kancasının bitmeyen bir varyasyon havuzu var — ki 2026'da kreatif yanma hızı
+            düşünülürse en kritik avantaj bu.
+          </p>
+          <p>
+            Teknik bar düşük: mikrofon kaydı + cihaz üstü ses sınıflandırma. Sunucu maliyeti
+            neredeyse sıfır, bu da düşük abonelik fiyatıyla bile marjı koruyor. Sağlık &amp;
+            Fitness, AppsFlyer'ın izlediği 13 abonelik kategorisinden biri ve haftalık
+            abonelik bu kategoride normal karşılanıyor.
+          </p>
+          <p>
+            <em>Nişin taze olduğunun kanıtı:</em> Snore AI gibi uygulamalar 2025 sonunda
+            piyasaya girdi — yani kurumsal yayıncılar bile bu kategoriye daha yeni giriyor.
+            Yerleşik bir dev yok.
+          </p>
+          <div class="warn">
+            <b>Politika riski:</b> "uyku apnesi teşhisi" gibi tıbbi iddia kullanmayın —
+            Meta sağlık iddialı reklamları eler. Dili "kaydet ve dinle" üzerinden kurun.
+          </div>
+        </div>
+        <dl class="facts">
+          <div class="fact"><dt>Ad Library</dt><dd><code>snore</code><code>sleep recorder</code><code>sleep sounds</code></dd></div>
+          <div class="fact"><dt>Aranan imza</dt><dd>Para basıyor <span style="color:var(--muted)">/</span> Ölçekleniyor</dd></div>
+          <div class="fact"><dt>Teknik</dt><dd>Düşük — mikrofon + cihaz üstü model</dd></div>
+          <div class="fact"><dt>Rekabet</dt><dd>Dağınık, lider yok</dd></div>
+          <div class="fact"><dt>Model</dt><dd>3 gün deneme → haftalık</dd></div>
+        </dl>
+      </article>
+
+      <article class="card">
+        <div class="card-body">
+          <div class="card-head">
+            <span class="rank">02</span>
+            <h3>Vücut tarama &amp; ilerleme fotoğrafı</h3>
+            <span class="pill go">Kreatifi evergreen</span>
+          </div>
+          <p>
+            Önce/sonra görseli Instagram'ın en eski çalışan reklam formatı ve hiç yorulmuyor —
+            bu kategoride <em>uzun ömürlü reklam bulma ihtimaliniz en yüksek</em>, çünkü
+            dönüşüm görseli mevsimsel değil.
+          </p>
+          <p>
+            2026'da GainFrame, Thelo, Zing Coach, trackBod, TrueForm AI ve ZOZOFIT gibi
+            oyuncular fotoğraf, video veya 3B yakalamadan vücut yağ oranı ve kas skoru
+            çıkarıyor. Kategori kalabalıklaşıyor ama hâlâ bölünebilir: yaş grubu, doğum
+            sonrası, bodybuilding hazırlık dönemi gibi dikeyler boş.
+          </p>
+          <div class="warn">
+            <b>Bunu atlamayın:</b> Meta "istenmeyen vücut odağı" reklamlarını reddediyor.
+            Kreatifi çıplak gövde üzerinden değil, <b>sonuç grafiği ve sayı</b> üzerinden
+            kurun. Reddedilen reklam hesabı, ölü bir üründen daha hızlı öldürür.
+          </div>
+        </div>
+        <dl class="facts">
+          <div class="fact"><dt>Ad Library</dt><dd><code>body scan</code><code>body fat photo</code><code>progress photo</code></dd></div>
+          <div class="fact"><dt>Aranan imza</dt><dd>Para basıyor — 180 gün+ şerit arayın</dd></div>
+          <div class="fact"><dt>Teknik</dt><dd>Orta — görüntü modeli gerekir</dd></div>
+          <div class="fact"><dt>Rekabet</dt><dd>Artıyor, dikeyler boş</dd></div>
+          <div class="fact"><dt>Model</dt><dd>Yıllık ağırlıklı</dd></div>
+        </dl>
+      </article>
+
+      <article class="card">
+        <div class="card-body">
+          <div class="card-head">
+            <span class="rank">03</span>
+            <h3>Dikey kalori takibi</h3>
+            <span class="pill care">Sadece dar kama ile</span>
+          </div>
+          <p>
+            Kanıt tarafı çok güçlü: Cal AI sıfırdan <em>18 ayda 50 milyon dolar ARR'ye</em>
+            çıktı, 15 milyondan fazla indirme aldı, hiç dış yatırım almadan büyüdü ve
+            Mart 2026'da MyFitnessPal tarafından satın alındı. Temmuz 2026 itibarıyla aylık
+            geliri 2 milyon dolar seviyesinde ölçülüyordu. Büyümesi ağırlıklı olarak ücretli
+            reklamdan değil, 250 kadar içerik üreticisine aylık sabit ödeme yapılan bir
+            influencer ağından geldi.
+          </p>
+          <p>
+            <em>Ama genel kalori sayacı artık kapalı bir kapı.</em> 2026'da fotoğrafla takip
+            rakiplerin neredeyse tamamına yayıldı: SnapCalorie, Intake, MacroFactor, Nutrola,
+            Foodvisor ve daha onlarcası. Yeni bir "fotoğrafını çek, kalorisini gör" uygulaması
+            CPI savaşını kaybeder.
+          </p>
+          <p>
+            Açık kalan tek yol dikey kama: GLP-1 kullanıcıları, diyabet, kütle artışı dönemi —
+            ya da <em>mutfak avantajı.</em> Global modeller mercimek çorbasının, lahmacunun,
+            pidenin porsiyon gramajını bilmiyor. Türk ve Orta Doğu mutfağı üzerinde gerçek bir
+            veri üstünlüğünüz var ve bu, kopyalanması en zor üstünlük türü.
+          </p>
+        </div>
+        <dl class="facts">
+          <div class="fact"><dt>Ad Library</dt><dd><code>calorie</code><code>food scan</code><code>GLP-1</code><code>macro tracker</code></dd></div>
+          <div class="fact"><dt>Aranan imza</dt><dd>Dikeylerde <strong>Ölçekleniyor</strong>; genelde hepsi Para basıyor</dd></div>
+          <div class="fact"><dt>Teknik</dt><dd>Orta-yüksek — görüntü + besin veritabanı</dd></div>
+          <div class="fact"><dt>Rekabet</dt><dd>Genelde doymuş, dikeyde açık</dd></div>
+          <div class="fact"><dt>Kanıt</dt><dd>$50M ARR / 18 ay, 15M+ indirme, exit</dd></div>
+        </dl>
+      </article>
+
+      <article class="card">
+        <div class="card-body">
+          <div class="card-head">
+            <span class="rank">04</span>
+            <h3>Astroloji &amp; manifestasyon</h3>
+            <span class="pill go">Teknik barı en düşük</span>
+          </div>
+          <p>
+            Reklam açısından en bereketli kategori: kanca malzemesi sonsuz, kitle hiper-hedeflenebilir,
+            CPI düşük. Nebula'nın Instagram ve TikTok'ta kullandığı <em>"Venüs burcunun şunu
+            etkilediğini biliyor muydun?"</em> kalıbı tam da bunun örneği — tek bir şablondan
+            yüzlerce varyasyon çıkıyor, ki kreatif yanmanın hızlandığı bir dönemde bu belirleyici.
+          </p>
+          <p>
+            Pazar tarafı da küçük değil: astroloji uygulama pazarı 2026'da 16 milyar dolar
+            seviyesinde ölçülüyor ve freemium modeli yaklaşık %45'lik payla en büyük dilim.
+            Nebula ABD'nin en çok kazanan burç uygulaması konumunda ve uygulama içi geliri
+            7 milyon doları aşmış durumda.
+          </p>
+          <p>
+            Solo geliştirici için en uygun aday olmasının nedeni teknik: efemeris hesabı çözülmüş
+            bir problem, üstüne LLM ile metin üretimi geliyor. Görüntü modeli, cihaz sensörü,
+            besin veritabanı gerekmiyor.
+          </p>
+          <div class="warn">
+            <b>Politika riski:</b> kesin kader iddiaları reklam reddine yol açar.
+            "Eğlence amaçlıdır" çerçevesini hem üründe hem kreatifte kurun.
+          </div>
+        </div>
+        <dl class="facts">
+          <div class="fact"><dt>Ad Library</dt><dd><code>astrology</code><code>birth chart</code><code>tarot</code><code>manifestation</code></dd></div>
+          <div class="fact"><dt>Aranan imza</dt><dd>Para basıyor — tek şablondan çok varyant</dd></div>
+          <div class="fact"><dt>Teknik</dt><dd>Düşük — efemeris + LLM metin</dd></div>
+          <div class="fact"><dt>Rekabet</dt><dd>Yoğun ama parçalı</dd></div>
+          <div class="fact"><dt>Pazar</dt><dd>$16,07 mlr (2026), freemium %45</dd></div>
+        </dl>
+      </article>
+    </div>
+
+    <div class="tier-bar">
+      <h3>B Kademesi</h3>
+      <span>Pazar büyük, ama giriş engeli sizin aleyhinize çalışıyor</span>
+    </div>
+
+    <div class="cards">
+      <article class="card">
+        <div class="card-body">
+          <div class="card-head">
+            <span class="rank">05</span>
+            <h3>AI fotoğraf, portre, restorasyon</h3>
+            <span class="pill care">Sadece keskin dikeyle</span>
+          </div>
+          <p>
+            Kategorinin reklamla büyüdüğü tartışmasız — Remini tek dokunuşla fotoğraf
+            iyileştirmesiyle viral oldu, Lensa "Magic Avatars" ile patladı ve haftalık 3,99 dolardan
+            fiyatlanıyor. PhotoRoom ise ürün fotoğrafçılığına odaklanıp Amazon, Etsy ve eBay
+            satıcılarının araç setine girdi.
+          </p>
+          <p>
+            Sorun şu: bu kategoride kreatif yanma hızı en yüksek ve CPI en acımasız seviyede.
+            Genel bir "AI fotoğraf" uygulamasıyla girerseniz reklam bütçeniz kreatif üretmeye
+            yetişemez. <em>PhotoRoom'un yolu doğru olan:</em> tek bir meslek grubuna çakılmak —
+            vesikalık/CV fotoğrafı, emlak ilanı görseli, e-ticaret ürün çekimi.
+          </p>
+        </div>
+        <dl class="facts">
+          <div class="fact"><dt>Ad Library</dt><dd><code>headshot</code><code>photo enhancer</code><code>product photo</code></dd></div>
+          <div class="fact"><dt>Aranan imza</dt><dd>Yüksek yenileme + kısa ömür = pahalı savaş</dd></div>
+          <div class="fact"><dt>Teknik</dt><dd>Orta — hazır modeller var</dd></div>
+          <div class="fact"><dt>Rekabet</dt><dd>Çok yoğun</dd></div>
+        </dl>
+      </article>
+
+      <article class="card">
+        <div class="card-body">
+          <div class="card-head">
+            <span class="rank">06</span>
+            <h3>AI arkadaş / companion</h3>
+            <span class="pill stop">Sorunuza yanlış cevap</span>
+          </div>
+          <p>
+            Rakamlar baş döndürücü: 2026 Sevgililer Günü itibarıyla dünyada 50 milyon kişi
+            AI companion kullanıyor, kategori 2025'te bir milyar doları aşan tüketici harcaması
+            üretti, Replika tek başına 20 milyon kullanıcı ve 200 milyon doları aşan yıllık gelire
+            ulaştı.
+          </p>
+          <p>
+            Ama sizin sorunuz "Instagram reklamıyla büyüyen uygulama" idi — ve bu kategori
+            tam olarak <em>Meta'dan kaçıyor.</em> Reddit'in eCPM'i 2,29 dolar iken Meta'nınki
+            11,73 dolar; CPC tarafında 0,59 dolara karşılık 1,33 dolar. Üstüne romantik companion
+            reklamları Meta politikasında sürekli elemeye takılıyor. Kategori kazanıyor olabilir,
+            ama Instagram reklamıyla kazanmıyor.
+          </p>
+        </div>
+        <dl class="facts">
+          <div class="fact"><dt>Ad Library</dt><dd>Beklemeyin — hacim Reddit'te</dd></div>
+          <div class="fact"><dt>Aranan imza</dt><dd>Meta'da zayıf, kanal uyumsuz</dd></div>
+          <div class="fact"><dt>Teknik</dt><dd>Orta — LLM + hafıza katmanı</dd></div>
+          <div class="fact"><dt>Engel</dt><dd>Reklam politikası</dd></div>
+        </dl>
+      </article>
+
+      <article class="card">
+        <div class="card-body">
+          <div class="card-head">
+            <span class="rank">07</span>
+            <h3>Yüzsüz içerik &amp; kısa video araçları</h3>
+            <span class="pill care">Doğru iş, yanlış kalıp</span>
+          </div>
+          <p>
+            Talep gerçek: yüzsüz kanallar 2026'da yeni içerik üretici girişimlerinin %38'ini
+            oluşturuyor — 2022'de bu oran %12'ydi, üç yılda %217 artış. Submagic tarafında
+            kanıt daha da net: ilk müşteriden üç ay sonra 1 milyon dolar ARR, Haziran 2025
+            itibarıyla 8 milyon dolar ARR, tamamen bootstrapped.
+          </p>
+          <p>
+            Ama bu bir <em>web SaaS işi</em>, mobil abonelik işi değil. Alıcı zaten masaüstünde
+            çalışıyor, satın alma kararı deneme sürümüyle veriliyor. Instagram reklamı + App Store
+            aboneliği kalıbınıza oturmuyor — bu yüzden B kademesinde.
+          </p>
+        </div>
+        <dl class="facts">
+          <div class="fact"><dt>Ad Library</dt><dd><code>video captions</code><code>faceless</code></dd></div>
+          <div class="fact"><dt>Aranan imza</dt><dd>Kanal uyumu zayıf</dd></div>
+          <div class="fact"><dt>Teknik</dt><dd>Orta-yüksek — video işleme</dd></div>
+          <div class="fact"><dt>Kanıt</dt><dd>Submagic $8M ARR, bootstrapped</dd></div>
+        </dl>
+      </article>
+    </div>
+
+    <div class="tier-bar">
+      <h3>C Kademesi</h3>
+      <span>Girmeyin</span>
+    </div>
+
+    <div class="cards">
+      <article class="card">
+        <div class="card-body">
+          <div class="card-head">
+            <span class="rank">08</span>
+            <h3>Genel tarayıcı, genel meditasyon, genel kalori</h3>
+            <span class="pill stop">CPI ezilmiş</span>
+          </div>
+          <p>
+            Mobil tarayıcı uygulamaları pazarı 2026'da 1–1,6 milyar dolar bandında ölçülüyor —
+            yani pazar var. Sorun pazarın varlığı değil, <em>pazarın zaten satın alınmış olması.</em>
+            Bu kategorilerde yerleşik oyuncular CPI'yi solo bir bütçenin kaldıramayacağı
+            seviyeye çekti ve organik keşif kanalları kapalı.
+          </p>
+          <p>
+            Ad Library'de bu nişlere baktığınızda göreceğiniz imza nettir: aynı reklamverenler,
+            yıllardır ayakta duran şeritler, ve yeni giren hesapların iki haftada kesilen kısa
+            çubukları. <em>O kısa çubuklar sizsiniz.</em>
+          </p>
+        </div>
+        <dl class="facts">
+          <div class="fact"><dt>Ad Library</dt><dd><code>pdf scanner</code><code>meditation</code></dd></div>
+          <div class="fact"><dt>Aranan imza</dt><dd>Yerleşiklerde Para basıyor, yenilerde Test ediyor</dd></div>
+          <div class="fact"><dt>Karar</dt><dd>Atlayın</dd></div>
+        </dl>
+      </article>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <p class="eyebrow">Özet tablo</p>
+      <h2>Tek bakışta</h2>
+    </div>
+    <div class="tablewrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Niş</th><th>Kademe</th><th>Teknik</th><th>Kreatif kolaylığı</th>
+            <th>Rekabet</th><th>Kanıt</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>Uyku &amp; horlama</strong></td><td class="num">A</td><td>Düşük</td><td>Çok yüksek</td><td>Dağınık</td><td>Yeni oyuncular giriyor</td></tr>
+          <tr><td><strong>Vücut tarama</strong></td><td class="num">A</td><td>Orta</td><td>Çok yüksek</td><td>Artıyor</td><td>6+ aktif oyuncu</td></tr>
+          <tr><td><strong>Dikey kalori</strong></td><td class="num">A</td><td>Orta-yüksek</td><td>Yüksek</td><td>Genelde doymuş</td><td>Cal AI: $50M ARR, exit</td></tr>
+          <tr><td><strong>Astroloji</strong></td><td class="num">A</td><td>Düşük</td><td>Çok yüksek</td><td>Parçalı</td><td>$16,07 mlr pazar</td></tr>
+          <tr><td><strong>AI fotoğraf</strong></td><td class="num">B</td><td>Orta</td><td>Yüksek ama hızlı yanan</td><td>Çok yoğun</td><td>Remini, Lensa, PhotoRoom</td></tr>
+          <tr><td><strong>AI companion</strong></td><td class="num">B</td><td>Orta</td><td>Politika engelli</td><td>Yoğun</td><td>50M kullanıcı, ama Reddit'te</td></tr>
+          <tr><td><strong>Yüzsüz video</strong></td><td class="num">B</td><td>Orta-yüksek</td><td>Orta</td><td>Artıyor</td><td>Submagic: $8M ARR</td></tr>
+          <tr><td><strong>Genel araçlar</strong></td><td class="num">C</td><td>Düşük</td><td>Düşük</td><td>Ezilmiş</td><td>—</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <p class="eyebrow">Coğrafya arbitrajı</p>
+      <h2>Türkiye'de test edin, ABD'de para kazanın</h2>
+    </div>
+    <div class="prose">
+      <p style="color:var(--ink-2)">
+        Buradaki asimetri sizin lehinize ve çoğu kişi kullanmıyor. Türkiye indirme büyümesinde
+        dünyada ikinci sırada — yıllık %171 artış; birinci sırada %210 ile Almanya var. Ama
+        Türkiye Android ağırlıklı ve kullanıcı başına gelir düşük.
+      </p>
+      <p style="margin-top:14px; color:var(--ink-2)">
+        Bunu bir dezavantaj değil, <strong>ucuz test tahtası</strong> olarak okuyun. Kreatif
+        eleme aşamasında dönüşüm değil, kanca gücü ölçersiniz — ve o ölçümü Türkiye'de ABD'nin
+        çok altında bir maliyetle yapabilirsiniz. On kancayı Türkiye'de eleyip kazananı
+        ABD'ye taşımak, aynı öğrenmeyi kat kat ucuza almanız demek.
+      </p>
+      <p style="margin-top:14px; color:var(--ink-2)">
+        Almanya bu planda çifte rol oynuyor: hem büyüme lideri, hem yüksek ARPU, hem büyük
+        Türk nüfusu — <strong>ve AB olduğu için Ad Library'de kapanma tarihlerini görebildiğiniz
+        tek pazar tipinde.</strong> Yani rakip analizi yaptığınız yer ile ölçek aldığınız yer
+        aynı olabiliyor.
+      </p>
+      <p style="margin-top:14px; color:var(--ink-2)">
+        Fiyatlamayı buna göre kurun. 2026 ilk çeyreğinde global ortalama kurulum maliyeti
+        iOS'ta 5,84 dolar (yıllık %19 artış), Android'de 1,92 dolar (%8 artış) seviyesindeydi.
+        Kural basit: <em>deneme başına maliyetiniz 30 dolarsa, 40 dolarlık yıllık abonelik
+        çalışmaz.</em> Ya fiyatı yukarı çekin ya da kanalı ucuzlatın — arada bir yer yok.
+      </p>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <p class="eyebrow">Uygulama</p>
+      <h2>Önümüzdeki 14 gün</h2>
+      <p>Sıra önemli: veri toplamadan ürün seçmeyin, ürün seçmeden kod yazmayın.</p>
+    </div>
+    <ol class="steps">
+      <li>
+        <div>
+          <h4>Ad Library API erişimi açın</h4>
+          <p><code>facebook.com/ID</code> üzerinden kimlik doğrulaması 1–3 iş günü sürüyor;
+          en uzun bekleme burası, o yüzden ilk iş bu. Sonra developers.facebook.com'da
+          uygulama oluşturup <b>Ad Library API</b> ürününü ekleyin.</p>
+        </div>
+      </li>
+      <li>
+        <div>
+          <h4>A kademesindeki dört nişi tarayın</h4>
+          <p>Ülke olarak Almanya, Hollanda, Fransa seçin — kapanma tarihi yalnız orada var.
+          Her niş için reklamveren başına ömür dağılımını çıkarın.</p>
+        </div>
+      </li>
+      <li>
+        <div>
+          <h4>"Para basıyor" imzalı hesapları ayırın</h4>
+          <p>90 gün+ ayakta reklamı <b>ve</b> son 30 günde en az üç yeni kreatifi olanlar.
+          Sadece eskisi olanları eleyin — onlar unutulmuş hesaplar.</p>
+        </div>
+      </li>
+      <li>
+        <div>
+          <h4>Kancaları çıkarın, ürünü değil</h4>
+          <p>Uzun yaşayan reklamların ilk üç saniyesini yazıya dökün. Tekrar eden kalıp
+          neyse asıl ürün odur — özellik listesi değil.</p>
+        </div>
+      </li>
+      <li>
+        <div>
+          <h4>Tek nişe karar verin ve dikey seçin</h4>
+          <p>Genel değil dar girin. Cal AI dersi: kategoriyi açan kazanır, kategoriye
+          sonradan genel ürünle giren CPI savaşını kaybeder.</p>
+        </div>
+      </li>
+      <li>
+        <div>
+          <h4>Ürün yerine paywall'ı önce test edin</h4>
+          <p>Çalışır bir uygulama olmadan, kanca + mağaza sayfası + fiyat ile Türkiye'de
+          ucuz trafik alın. Tıklama ve mağaza dönüşümü tutmuyorsa kod yazmanın anlamı yok.</p>
+        </div>
+      </li>
+      <li>
+        <div>
+          <h4>Kazanan kancayı ABD/Almanya'ya taşıyın</h4>
+          <p>Kurulum değil, uygulama içi olay optimize edin. Haftada 15+ kreatif varyantı
+          üretecek bir tempo kurun — 2026'da tek konseptin ömrü iki-üç hafta.</p>
+        </div>
+      </li>
+    </ol>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <p class="eyebrow">Araç</p>
+      <h2>adscan</h2>
+      <p>
+        Bu raporun yöntemini elle uygulamak 20 reklamda mümkün, 2000 reklamda değil.
+        Depoda birlikte gelen <code style="font-family:var(--f-mono);font-size:.88em">adscan</code>
+        aynı veriyi API'den toplu çekip reklamveren başına ömür istatistiğine ve yukarıdaki
+        dört karardan birine çeviriyor.
+      </p>
+    </div>
+    <div class="tool">
+      <pre><b>python3 adscan/adscan.py --selftest</b>            <span style="color:var(--muted)"># ağ gerekmez, mantığı doğrular</span>
+
+<b>export META_AD_LIBRARY_TOKEN="EAAB..."</b>
+<b>python3 adscan/adscan.py --query "snore" \
+    --countries DE,NL,FR \
+    --csv ozet.csv --ads-csv reklamlar.csv</b>
+
+REKLAMVEREN                   SKOR AKTIF  EN ESKI   90G+  YENI30  KARAR
+<span style="color:var(--muted)">──────────────────────────────────────────────────────────────────────</span>
+<span style="color:var(--live)">Rakip A</span>                       78.4    12     412g    34%       6  PARA BASIYOR
+<span style="color:var(--signal)">Rakip B</span>                       61.2     9      44g     0%      11  ÖLÇEKLENİYOR
+<span style="color:var(--muted)">Rakip C</span>                       22.7     2     388g     50%      0  UNUTULMUŞ
+<span style="color:var(--cut)">Rakip D</span>                       18.3     1      12g      0%      2  TEST EDİYOR
+
+<span style="color:var(--muted)">↑ örnek satırlar — çıktı biçimini gösterir, gerçek ölçüm değildir</span></pre>
+      <p style="margin-top:16px; font-size:.9rem; color:var(--ink-2)">
+        <code style="font-family:var(--f-mono);font-size:.86em">median_life_of_killed_ads</code>
+        kolonuna ayrıca bakın: kapatılan reklamların medyan ömrü, rakibin testi ne kadar hızlı
+        kestiğini söyler. Düşükse disiplinli bir ekiple karşı karşıyasınız demektir.
+      </p>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <p class="eyebrow">Kaynaklar</p>
+      <h2>Veriler nereden geldi</h2>
+      <p>
+        Bu ortamda facebook.com ağ politikasıyla engelli olduğu için Ad Library'ye
+        <strong>canlı bağlanılamadı</strong> — aşağıdaki rakamlar yayımlanmış kaynaklardan,
+        ömür imzaları ise yöntemin kendisinden geliyor. Canlı doğrulamayı
+        <code style="font-family:var(--f-mono);font-size:.88em">adscan</code> ile kendi
+        makinenizde yapın.
+      </p>
+    </div>
+    <ul class="sources">
+      <li><a href="https://techcrunch.com/2026/03/02/myfitnesspal-has-acquired-cal-ai-the-viral-calorie-app-built-by-teens/">TechCrunch — MyFitnessPal, Cal AI'ı satın aldı</a></li>
+      <li><a href="https://getlatka.com/companies/calai.app">Latka — Cal AI geliri</a></li>
+      <li><a href="https://apprank.io/cal-ai-calorie-tracker">AppRank — Cal AI aylık gelir</a></li>
+      <li><a href="https://growthcurve.co/three-engines-and-an-exit-the-cal-ai-growth-playbook">Growthcurve — Cal AI büyüme oyun kitabı</a></li>
+      <li><a href="https://www.statista.com/statistics/1451664/top-horoscope-apps-us-market-revenue/">Statista — ABD'de en çok kazanan burç uygulamaları</a></li>
+      <li><a href="https://www.researchandmarkets.com/reports/6090017/astrology-app-market-report">Research and Markets — Astroloji uygulama pazarı 2026</a></li>
+      <li><a href="https://unstar.app/blog/co-star-sanctuary-pattern-nebula-stellium-astrology-apps-ranked-2026">Unstar — Astroloji uygulamaları sıralaması 2026</a></li>
+      <li><a href="https://www.novaedgedigitallabs.tech/blog/ai-companions-50-million-users-valentines-day-2026">NovaEdge — AI companion 50 milyon kullanıcı</a></li>
+      <li><a href="https://www.mobidea.com/academy/ai-dating-guide/">Mobidea — AI dating trafik kaynakları ve eCPM</a></li>
+      <li><a href="https://getlatka.com/companies/submagic.co">Latka — Submagic ARR</a></li>
+      <li><a href="https://frameloop.ai/blog/faceless-youtube-statistics-2026">Frameloop — Yüzsüz içerik istatistikleri 2026</a></li>
+      <li><a href="https://gainframe.app/blog/best-body-scanning-measurement-apps/">GainFrame — Vücut tarama uygulamaları</a></li>
+      <li><a href="https://apps.apple.com/us/app/snore-ai-sleep-recorder/id6758810527">App Store — Snore AI</a></li>
+      <li><a href="https://adlibrary.com/posts/what-meta-ad-library-doesnt-show-you-2026">AdLibrary — Ad Library'nin göstermedikleri</a></li>
+      <li><a href="https://adlibrary.com/posts/meta-ad-library-api-limitations">AdLibrary — Ad Library API kısıtları</a></li>
+      <li><a href="https://swipekit.app/articles/meta-ad-library-api">Swipekit — Ad Library API erişimi ve örnekler</a></li>
+      <li><a href="https://adlibrary.com/posts/ad-fatigue">AdLibrary — 2026'da reklam yorgunluğu</a></li>
+      <li><a href="https://semnexus.com/meta-ads-for-app-installs-the-2026-founder-playbook">SEM Nexus — Uygulama kurulumu için Meta reklam oyun kitabı</a></li>
+      <li><a href="https://insertaffiliate.com/blog/mobile-app-user-acquisition-cost-benchmarks/">Insert Affiliate — CPI kıyaslamaları</a></li>
+      <li><a href="https://www.fintekwins.com/appsflyer-2026-abonelik-raporu-uygulama-odemelerindeki-kuresel-donusumu-ortaya-koydu/">AppsFlyer 2026 Abonelik Raporu — Türkiye büyüme verisi</a></li>
+      <li><a href="https://www.businessofapps.com/insights/will-generative-ai-apps-remain-a-revenue-powerhouse-in-2026/">Business of Apps — Üretken AI uygulama gelirleri</a></li>
+      <li><a href="https://www.businessresearchinsights.com/market-reports/mobile-scanner-apps-market-120527">Business Research Insights — Mobil tarayıcı pazarı</a></li>
+    </ul>
+
+    <footer>
+      Hazırlayan: Claude Code · 14 Eylül 2026 · Yöntem ve araç kodu depoda
+      <code style="font-family:var(--f-mono);font-size:.88em">adscan/</code> altında.
+      Rakamlar kaynak tarihlerindeki haliyle alınmıştır; karar vermeden önce canlı taramayla doğrulayın.
+    </footer>
+  </section>
+</div>
