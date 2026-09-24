@@ -1,0 +1,11 @@
+{
+  "nis": "Ev tekstil",
+  "tohum": ["Home beds-mattresses"],
+  "pazar": {"ad": "ABD", "location_code": 2840, "language_code": "en"},
+  "satis_bandi": [20, 40],
+  "aylik_reklam_butcesi": 300,
+  "tedarik": "AliExpress, Alibaba, CJdropshipping, AutoDS",
+  "magaza": "Yok",
+  "harcama_tavani_usd": 1.0,
+  "keyword_ideas_limit": 500
+}
