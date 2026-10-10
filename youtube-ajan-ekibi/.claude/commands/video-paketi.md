@@ -4,7 +4,7 @@ argument-hint: <video konusu>
 ---
 Konu: **$ARGUMENTS**
 
-Bu konu için eksiksiz bir YouTube video paketi hazırla. Klasör adı olarak konunun kısa, Türkçe karaktersiz, tireli halini kullan (ör. `cikti/evde-kahve-yapimi/`). Ajanları şu sırayla çalıştır:
+Bu konu için eksiksiz bir YouTube video paketi hazırla. Klasör adı olarak konunun kısa, Türkçe karaktersiz, tireli halini kullan (ör. `cikti/evde-kahve-yapimi/`). Klasörü ayrıca oluşturmana gerek yok; Write aracı dosyayı yazarken klasörü otomatik oluşturur. Her ajana dosyayı kendisinin Write ile kaydetmesini söyle. Ajanları şu sırayla çalıştır:
 
 **Aşama 1: Araştırma (paralel çalıştır)**
 - `trend-arastirmaci` → `01-arastirma.md`

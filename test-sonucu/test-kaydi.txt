@@ -1,0 +1,54 @@
+Klasör oluşturma komutu onay istedi, bu yüzden oluşturulmadı. İki ajan çalışmaya başladı. Dosyalarını yazarken klasörü kendileri oluşturmayı deneyecekler. Ajanlar bitince sonuçlarını kontrol edip Aşama 2'ye geçeceğim.
+
+Aşama 1 tamamlandı. İki ajan da dosya yazamadığı için `01-arastirma.md` ve `02-rakip-analizi.md` dosyalarını ben kaydettim. Rakip analizinde canlı YouTube verisine ulaşılamadı, dosyada bu açıkça belirtildi. Senarist Aşama 2'de çalışıyor, bitince paketleme ajanlarını başlatacağım.
+
+Senaryo `03-senaryo.md` olarak kaydedildi. Beş paketleme ajanı (kanca, SEO, thumbnail, Shorts, topluluk) çalışıyor. Hepsi bitince Aşama 4'te eleştirmeni başlatacağım.
+
+Thumbnail dosyası (`06-thumbnail.md`) hazır. Diğer dört ajanı (kanca, SEO, Shorts, topluluk) bekliyorum.
+
+Topluluk dosyası (`08-topluluk.md`) hazır. Kanca, SEO ve Shorts ajanlarını bekliyorum.
+
+SEO dosyası (`05-seo.md`) hazır. Kanca ve Shorts ajanlarını bekliyorum.
+
+Kanca, SEO, thumbnail, Shorts ve topluluk dosyaları (04–08) kaydedildi. Eleştirmen şimdi 01–08 arası dosyaları okuyup kalite kontrolü yapıyor. Bitince en kritik 5 düzeltmeyi uygulayıp `00-OZET.md` dosyasını yazacağım.
+
+Evde kahve yapımı video paketi hazır, ama çekimden önce birkaç şeyi doğrulamak gerekiyor. Eleştirmen ilk hâline 6,5/10 verdi. En kritik 5 düzeltmeyi uyguladım, ama düzeltilmiş hâli yeniden kontrol ettirmedim. Eleştirmenin tahmini ~8/10.
+
+**Seçilen başlık:** Starbucks Zammından Sonra Evde Kahve Hâlâ Ucuz mu?
+
+**Thumbnail:** Bölünmüş ekran. Solda logosuz bardak ve "145 TL", sağda fincan, tartı ve "≈25 TL". Sağ altta sizin gerçek fotoğrafınız olacak. A/B testi için ikinci kapak "AYDA 3.600 TL".
+
+**Kanca:** "Bu bardak, haberlere göre 145 lira. Aynı filtre kahveyi evde yaptığımda hesabıma göre yaklaşık 25 lira. Ama bu fark göründüğünden karmaşık, çünkü çekirdeğin fiyatı da uçtu."
+
+**Süre:** Kesimlerden sonra tahminen 10-10,5 dk. Kelime sayısı elle tahmin, kesin sayım yapılmadı.
+
+**Hesap:** Ayda 30 fincanla evde yaklaşık 750 TL, Starbucks'ta 4.350 TL, fark 3.600 TL. Bu rakamlar 329 TL / 250 g çekirdek varsayımına dayanıyor ve bu fiyat tek kaynaklı.
+
+**Düzeltmeler:**
+- Senaryo kısaltıldı, bölüm zaman damgaları bilerek boş bırakıldı (kurgudan sonra yazılacak).
+- Dünya fiyatı ile raf fiyatı kıyası "çelişki" yerine "soru işareti" olarak sunuluyor, çünkü iki rakam farklı dönemleri ölçüyor.
+- Başlık, thumbnail ve kanca aynı videoyu anlatacak şekilde hizalandı.
+- Moka pot "en ucuz" cevabı artık yalnızca kapanışta veriliyor.
+- Ekipman örneği öğütücü dahil 2.500 TL hayalî rakamla yeniden yazıldı, yaklaşık 21 fincanda çıkıyor.
+
+**Açık kalanlar:**
+- 329 TL / 79 TL fiyatının ve 19 g oranının tam kaynağını araştırma ajanı kaydetmemiş. Yayından önce bulunmalı.
+- Rakip analizinde YouTube'a erişilemedi. "Türkçe video boşluğu" kanıtsız bir hipotez. En az 10 Türkçe rakip videoyu elle incelemelisiniz.
+- Ocak 2026'dan sonra yeni Starbucks zammı olup olmadığına bakılmadı.
+- Çekimde gerçek ekipman fiyatları ve moka pot gramı girilmeli, rakamlar değişirse tüm dosyalar aynı formüllerle yeniden hesaplanmalı.
+- Eleştirmenin 8 ek küçük düzeltmesinin bir kısmı yapıldı. `rakamlar.md` ve rakip analizinin elle doldurulması yapılmadı.
+
+Ajanlar dosya yazma izni olmadığını bildirdiği için `01-arastirma.md` ve `02-rakip-analizi.md` dosyalarını ben kaydettim. Kalan dosyaları ajanlar yazdı.
+
+**Dosyalar** (`cikti/evde-kahve-yapimi/`):
+- `00-OZET.md` (yayın kontrol listesi burada)
+- `01-arastirma.md`
+- `02-rakip-analizi.md`
+- `03-senaryo.md`
+- `04-kancalar.md`
+- `05-seo.md`
+- `06-thumbnail.md`
+- `07-shorts.md`
+- `08-topluluk.md`
+- `99-kalite-kontrol.md`
+EXIT 0
