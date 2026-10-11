@@ -1,0 +1,42 @@
+Brief hazırlanıyor; bitince metin ve tasarım aşamasına geçeceğim.
+
+Metin ve tasarım ajanları paralel çalışıyor. İkisi de bitince görsel aşamasına geçeceğim.
+
+Metinler hazır. Tasarım ajanı hâlâ çalışıyor, bitmesini bekliyorum.
+
+Görsel yönetmen çalışıyor. Bitince kodlama aşamasına geçeceğim.
+
+Geliştirici siteyi kodluyor. Bitince SEO ve yayın aşamasını paralel başlatacağım.
+
+SEO ve yayın ajanları paralel çalışıyor. İkisi bitince kalite kontrole geçeceğim.
+
+SEO tamam. Yayın rehberi hâlâ yazılıyor, bitmesini bekliyorum.
+
+Kalite kontrol başladı. Rapor gelince düzeltmeleri geliştiriciye yaptıracağım.
+
+Geliştirici düzeltmeleri yapıyor. Bitince `plan/00-OZET.md` dosyasını yazacağım.
+
+Kadıköy kahve dükkânı için tek sayfalık site hazır, ama tarayıcıda açıp denemedim. Kontrolleri kodu okuyarak yaptım. Siteyi açmak için `site/index.html` dosyasına çift tıklayın.
+
+- **Sayfa yapısı:** Üst menü, hero, hakkımızda, sekmeli menü, olanaklar, galeri, yorumlar, SSS, iletişim ve harita, footer var. Mobilde alta sabit "Yol Tarifi Al / Ara" çubuğu da eklendi.
+- **Tasarım:** Krem zemin, espresso kahvesi metin, kiremit vurgu ve adaçayı yeşili kullanıldı. Başlıkta Fraunces, gövdede Inter var. Koyu tema otomatik açılıyor.
+- **SEO:** Meta etiketler, `robots.txt` ve `sitemap.xml` hazır. İşletme bilgisi için JSON-LD de eklendi.
+- **Kalite kontrol:**
+  - Hamburger menü ikonu ve koyu temadaki rozet kontrastı düzeltildi.
+  - Doğrulanmamış olanak ve SSS iddiaları yer tutucuya çevrildi.
+  - Mobilde "Şimdi açık" rozeti, favicon, `og:image` ve plan belgelerindeki küçük tutarsızlıklar yapılmadı.
+- **Yayın rehberi:** `plan/06-yayinlama.md` içinde Netlify, Cloudflare ve GitHub Pages adımları var. Rehberdeki bazı fiyat ve limit bilgilerini doğrulayamadım, yayından önce ilgili sitelerde teyit edin.
+
+**Sizin doldurmanız gerekenler:** Gerçek bilgileri uydurmadım, hepsi `[DOLDUR: ...]` olarak duruyor.
+- Dükkân adı, adres, telefon, e-posta ve çalışma saatleri.
+- Harita ve Instagram bağlantıları.
+- Menü ve fiyatlar.
+- Gerçek müşteri yorumları ve gerçek fotoğraflar.
+- Yayına çıkınca alan adı (`robots.txt` ve `sitemap.xml` içinde).
+
+`plan/00-OZET.md` içinde tam liste ve yayınlama adımları var.
+
+İlk açılışta mobil menü ikonunu ve alt çubuğu gözle kontrol edin.
+
+Tüm dosyalar `plan/` ve `site/` klasörlerinde.
+EXIT 0

@@ -1,0 +1,5 @@
+# DOLDUR: alan adı belli olunca ORNEK-ALANADI.com yerine gerçek alan adını yazın.
+User-agent: *
+Allow: /
+
+Sitemap: https://ORNEK-ALANADI.com/sitemap.xml
