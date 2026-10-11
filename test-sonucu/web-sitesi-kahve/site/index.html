@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- DOLDUR: dükkân adı belli olunca başlık ≤60, açıklama ≤155 karakter olacak şekilde yeniden sayın -->
+  <title>[DOLDUR: dükkân adı] | Kadıköy'de Kahve ve Yol Tarifi</title>
+  <meta name="description" content="Kadıköy'de özenle demlenen kahve ve rahat bir köşe. Menüyü görün, çalışma saatlerini öğrenin, yol tarifini tek dokunuşla alın.">
+  <meta name="theme-color" content="#FAF6F0">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+
+  <!-- DOLDUR: canonical. Alan adı belli olunca aşağıdaki satırın yorumunu açıp adresi yazın.
+       (Yer tutucu adresle yayınlamak arama motorlarını yanlış adrese yönlendirir, bu yüzden kapalı bırakıldı.)
+  <link rel="canonical" href="https://[DOLDUR: alan adı]/"> -->
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="tr_TR">
+  <meta property="og:site_name" content="[DOLDUR: dükkân adı]">
+  <meta property="og:title" content="[DOLDUR: dükkân adı] | Kadıköy'de Kahve ve Yol Tarifi">
+  <meta property="og:description" content="Kadıköy'de özenle demlenen kahve ve rahat bir köşe. Menüyü görün, çalışma saatlerini öğrenin, yol tarifini tek dokunuşla alın.">
+
+  <!-- Twitter / X kartı -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="[DOLDUR: dükkân adı] | Kadıköy'de Kahve ve Yol Tarifi">
+  <meta name="twitter:description" content="Kadıköy'de özenle demlenen kahve ve rahat bir köşe. Menüyü görün, çalışma saatlerini öğrenin, yol tarifini tek dokunuşla alın.">
+
+  <!-- DOLDUR: og:image ve og:url. img/og-gorsel.jpg (1200x630) hazır olunca ve alan adı belli olunca ekleyin
+       (görsel eklenince twitter:card değerini summary_large_image yapıp twitter:image de ekleyin):
+  <meta property="og:image" content="https://[DOLDUR: alan adı]/img/og-gorsel.jpg">
+  <meta property="og:image:alt" content="[DOLDUR: dükkân adı], Kadıköy'de kahve dükkânı">
+  <meta property="og:url" content="https://[DOLDUR: alan adı]/">
+  <meta name="twitter:image" content="https://[DOLDUR: alan adı]/img/og-gorsel.jpg"> -->
+
+  <!-- YAPILANDIRILMIŞ VERİ: CafeOrCoffeeShop (JSON-LD). Aşağıdaki blok geçerli JSON'dur; bilinmeyen alanlar BİLEREK eklenmedi.
+       Bilgiler gelince JSON'a şu satırları ekleyin (virgüllere dikkat):
+         "url": "https://[DOLDUR: alan adı]/",
+         "telephone": "[DOLDUR: telefon, +90 ile]",
+         "image": "https://[DOLDUR: alan adı]/img/og-gorsel.jpg",
+         "hasMap": "[DOLDUR: Google Haritalar bağlantısı]",
+         "sameAs": ["[DOLDUR: Instagram bağlantısı]"],
+         "priceRange": "[DOLDUR: ₺ / ₺₺ / ₺₺₺]",
+         "servesCuisine": "Kahve",
+         "geo": {"@type": "GeoCoordinates", "latitude": [DOLDUR], "longitude": [DOLDUR]},
+         "openingHoursSpecification": [{"@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday"], "opens": "[DOLDUR: SS:DD]", "closes": "[DOLDUR: SS:DD]"}],
+         address içine: "streetAddress": "[DOLDUR: sokak ve no]", "postalCode": "[DOLDUR: posta kodu]"
+       Puan (aggregateRating) ve yorum (review) yalnızca gerçek ve doğrulanabilir veri varsa eklenmeli. -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "CafeOrCoffeeShop",
+    "name": "[DOLDUR: dükkân adı]",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Kadıköy",
+      "addressRegion": "İstanbul",
+      "addressCountry": "TR"
+    }
+  }
+  </script>
+
+  <!-- DOLDUR: img/favicon.svg hazır olunca açın -->
+  <!-- <link rel="icon" href="img/favicon.svg" type="image/svg+xml"> -->
+
+  <!-- Fontlar: internet yoksa sistem fontuna düşer. display=swap yazıyı geciktirmez -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/main.js" defer></script>
+</head>
+<body>
+  <!-- İkonlar: Lucide, ISC lisansı -->
+  <a class="atla" href="#icerik">İçeriğe geç</a>
+
+  <!-- 1. ÜST MENÜ -->
+  <header class="ust">
+    <div class="kapsayici ust__ic">
+      <a class="ust__logo" href="#" aria-label="[DOLDUR: dükkân adı], sayfa başı">
+        <img src="img/logo.svg" width="150" height="40" alt="[DOLDUR: dükkân adı]">
+      </a>
+
+      <nav class="nav" aria-label="Ana menü">
+        <button class="nav__dugme" type="button" aria-expanded="false" aria-controls="nav-menu" aria-label="Menüyü aç">
+          <svg class="ikon ikon--ac" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
+          <svg class="ikon ikon--kapat" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false" hidden><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+        </button>
+        <ul class="nav__liste" id="nav-menu">
+          <li><a href="#menu">Menü</a></li>
+          <li><a href="#hakkimizda">Hakkımızda</a></li>
+          <li><a href="#galeri">Galeri</a></li>
+          <li><a href="#iletisim">İletişim</a></li>
+        </ul>
+      </nav>
+
+      <!-- "Şimdi açık" göstergesi: saatler main.js içindeki SAATLER'e girilince görünür -->
+      <p class="rozet" id="acik-rozet" hidden role="status"></p>
+
+      <!-- DOLDUR: harita linki (Google Haritalar yol tarifi bağlantısı) -->
+      <a class="dugme dugme--kucuk ust__cta" href="#DOLDUR-harita-linki" data-harita>Yol Tarifi Al</a>
+    </div>
+  </header>
+
+  <main id="icerik">
+    <!-- 2. HERO -->
+    <!-- Gerçek fotoğraf gelince .hero--yer-tutucu sınıfını kaldırıp aşağıdaki <picture> bloğunu açın:
+    <picture class="hero__resim">
+      <source media="(max-width: 599px)" srcset="img/hero-mobil.webp" width="900" height="1125">
+      <img src="img/hero.webp" width="1600" height="900" alt="Pencere kenarında buharı tüten bir fincan kahve ve ahşap masa" fetchpriority="high">
+    </picture> -->
+    <section class="hero hero--yer-tutucu" aria-labelledby="hero-baslik">
+      <div class="kapsayici hero__ic">
+        <p class="hero__etiket">Geçici görsel</p>
+        <h1 id="hero-baslik">Kadıköy'de Güne İyi Gelen Bir Fincan Kahve</h1>
+        <p class="hero__alt">Özenle hazırlanan kahveler, sakin bir köşe ve sizi bekleyen bir masa. [DOLDUR: slogan]</p>
+        <div class="hero__dugmeler">
+          <a class="dugme" href="#DOLDUR-harita-linki" data-harita>
+            <svg class="ikon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><polygon points="3 11 22 2 13 21 11 13 3 11"/></svg>
+            Yol Tarifi Al
+          </a>
+          <a class="dugme dugme--ikincil dugme--acik" href="#menu">Menüyü Gör</a>
+        </div>
+        <p class="hero__guven">[DOLDUR: açık adres, kısa hali] · [DOLDUR: bugünün çalışma saati]</p>
+      </div>
+    </section>
+
+    <!-- 3. HAKKIMIZDA -->
+    <section class="bolum" id="hakkimizda" aria-labelledby="hakkimizda-baslik">
+      <div class="kapsayici ikili">
+        <div class="ikili__metin">
+          <h2 id="hakkimizda-baslik">Bir Fincanın Arkasındaki Hikâye</h2>
+          <p>[DOLDUR: hikâye. Kuruluş yılı, kurucu, dükkânı açma sebebi, 2-3 cümle]</p>
+          <p>Kahveyi acele etmeden, doğru ölçüyle ve özenle hazırlıyoruz. Amacımız basit: geldiğinizde keyifle içeceğiniz bir fincan sunmak.</p>
+          <ul class="vurgular">
+            <li>
+              <svg class="ikon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M10 2v2"/><path d="M14 2v2"/><path d="M16 8a1 1 0 0 1 1 1v8a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4V9a1 1 0 0 1 1-1h14a4 4 0 1 1 0 8h-1"/><path d="M6 2v2"/></svg>
+              <p><strong>Çekirdek:</strong> [DOLDUR: çekirdek kaynağı / kavurmacı bilgisi]</p>
+            </li>
+            <li>
+              <svg class="ikon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M10 2v2"/><path d="M14 2v2"/><path d="M16 8a1 1 0 0 1 1 1v8a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4V9a1 1 0 0 1 1-1h14a4 4 0 1 1 0 8h-1"/><path d="M6 2v2"/></svg>
+              <p><strong>Demleme:</strong> [DOLDUR: demleme yöntemleri, ör. hangi yöntemlerle hazırlandığı]</p>
+            </li>
+            <li>
+              <svg class="ikon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M10 2v2"/><path d="M14 2v2"/><path d="M16 8a1 1 0 0 1 1 1v8a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4V9a1 1 0 0 1 1-1h14a4 4 0 1 1 0 8h-1"/><path d="M6 2v2"/></svg>
+              <p><strong>Atmosfer:</strong> Sohbet etmek, kitap okumak ya da bilgisayarınızla bir süre çalışmak için rahat bir ortam. [DOLDUR: doğrulayın]</p>
+            </li>
+          </ul>
+          <a class="dugme dugme--ikincil" href="#menu">Menüyü Gör</a>
+        </div>
+        <!-- Gerçek fotoğraf: <img src="img/hakkimizda.webp" width="800" height="1000" alt="..." loading="lazy"> -->
+        <div class="yer-tutucu yer-tutucu--4-5" role="img" aria-label="Geçici görsel: [DOLDUR: fotoğraf açıklaması, ör. Dükkânın içinden bir görüntü]">
+          <svg class="ikon" xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M10 2v2"/><path d="M14 2v2"/><path d="M16 8a1 1 0 0 1 1 1v8a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4V9a1 1 0 0 1 1-1h14a4 4 0 1 1 0 8h-1"/><path d="M6 2v2"/></svg>
+          <span>Geçici görsel</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. MENÜ -->
+    <section class="bolum bolum--alt" id="menu" aria-labelledby="menu-baslik">
+      <div class="kapsayici">
+        <h2 id="menu-baslik">Menü</h2>
+        <p class="bolum__alt">Güncel ürünler ve fiyatlar aşağıda. [DOLDUR: fiyat güncelleme tarihi]</p>
+
+        <!-- Sekmeler yalnızca JS varsa görünür (mobil); masaüstünde 3 kategori yan yana -->
+        <div class="sekmeler" role="tablist" aria-label="Menü kategorileri">
+          <button type="button" role="tab" id="sekme-sicak" aria-controls="panel-sicak" aria-selected="true">Sıcak İçecekler</button>
+          <button type="button" role="tab" id="sekme-soguk" aria-controls="panel-soguk" aria-selected="false" tabindex="-1">Soğuk İçecekler</button>
+          <button type="button" role="tab" id="sekme-tatli" aria-controls="panel-tatli" aria-selected="false" tabindex="-1">Tatlı ve Atıştırmalıklar</button>
+        </div>
+
+        <div class="menu-izgara">
+          <div class="menu-panel" id="panel-sicak" role="tabpanel" aria-labelledby="sekme-sicak">
+            <h3>Sıcak İçecekler</h3>
+            <!-- DOLDUR: gerçek ürünler ve fiyatlar gelince satırları güncelleyin -->
+            <ul class="menu-liste">
+              <li class="kart"><div class="urun"><span class="urun__ad">[DOLDUR: ürün adı]</span><span class="urun__fiyat">[DOLDUR: fiyat]</span></div><p class="urun__aciklama">[DOLDUR: kısa açıklama]</p></li>
+              <li class="kart"><div class="urun"><span class="urun__ad">[DOLDUR: ürün adı]</span><span class="urun__fiyat">[DOLDUR: fiyat]</span></div><p class="urun__aciklama">[DOLDUR: kısa açıklama]</p></li>
+              <li class="kart"><div class="urun"><span class="urun__ad">[DOLDUR: ürün adı]</span><span class="urun__fiyat">[DOLDUR: fiyat]</span></div><p class="urun__aciklama">[DOLDUR: kısa açıklama]</p></li>
+            </ul>
+          </div>
+          <div class="menu-panel" id="panel-soguk" role="tabpanel" aria-labelledby="sekme-soguk">
+            <h3>Soğuk İçecekler</h3>
+            <ul class="menu-liste">
+              <li class="kart"><div class="urun"><span class="urun__ad">[DOLDUR: ürün adı]</span><span class="urun__fiyat">[DOLDUR: fiyat]</span></div><p class="urun__aciklama">[DOLDUR: kısa açıklama]</p></li>
+              <li class="kart"><div class="urun"><span class="urun__ad">[DOLDUR: ürün adı]</span><span class="urun__fiyat">[DOLDUR: fiyat]</span></div><p class="urun__aciklama">[DOLDUR: kısa açıklama]</p></li>
+            </ul>
+          </div>
+          <div class="menu-panel" id="panel-tatli" role="tabpanel" aria-labelledby="sekme-tatli">
+            <h3>Tatlı ve Atıştırmalıklar</h3>
+            <ul class="menu-liste">
+              <li class="kart"><div class="urun"><span class="urun__ad">[DOLDUR: ürün adı]</span><span class="urun__fiyat">[DOLDUR: fiyat]</span></div><p class="urun__aciklama">[DOLDUR: kısa açıklama]</p></li>
+              <li class="kart"><div class="urun"><span class="urun__ad">[DOLDUR: ürün adı]</span><span class="urun__fiyat">[DOLDUR: fiyat]</span></div><p class="urun__aciklama">[DOLDUR: kısa açıklama]</p></li>
+            </ul>
+          </div>
+        </div>
+
+        <p class="menu-not">[DOLDUR: alerjen / süt alternatifi notu, varsa]</p>
+        <a class="dugme" href="#DOLDUR-harita-linki" data-harita>Yol Tarifi Al</a>
+      </div>
+    </section>
+
+    <!-- 5. NEDEN BİZ / OLANAKLAR -->
+    <!-- DOLDUR: Yalnızca doğrulanan olanaklar yayınlanır. Doğrulanmayan satırı <li> ile birlikte silin. -->
+    <section class="bolum" id="olanaklar" aria-labelledby="olanak-baslik">
+      <div class="kapsayici">
+        <h2 id="olanak-baslik">Gelince Sizi Neler Bekliyor?</h2>
+        <p class="bolum__alt">Burada geçirecek vaktinizi planlamanız için bilmeniz gerekenler.</p>
+        <ul class="olanaklar">
+          <!-- YER TUTUCU: Wi-Fi doğrulanmadı -->
+          <li class="kart">
+            <svg class="ikon" xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 20h.01"/><path d="M2 8.82a15 15 0 0 1 20 0"/><path d="M5 12.859a10 10 0 0 1 14 0"/><path d="M8.5 16.429a5 5 0 0 1 7 0"/></svg>
+            <h3>Wi-Fi</h3>
+            <!-- DOLDUR: Wi-Fi varsa şu cümleyi kullanın: "Ücretsiz Wi-Fi ile çalışmaya ya da göz atmaya devam edin." Yoksa bu kartı silin. -->
+            <p>[DOLDUR: Wi-Fi bilgisi]</p>
+          </li>
+          <!-- YER TUTUCU: Priz doğrulanmadı -->
+          <li class="kart">
+            <svg class="ikon" xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 22v-5"/><path d="M9 8V2"/><path d="M15 8V2"/><path d="M18 8v5a4 4 0 0 1-4 4h-4a4 4 0 0 1-4-4V8Z"/></svg>
+            <h3>Priz</h3>
+            <!-- DOLDUR: Priz varsa şu cümleyi kullanın: "Bilgisayarınızı şarj ederek çalışabilirsiniz." (kaç masada olduğunu ekleyin). Yoksa bu kartı silin. -->
+            <p>[DOLDUR: priz bilgisi]</p>
+          </li>
+          <!-- YER TUTUCU: Açık alan doğrulanmadı -->
+          <li class="kart">
+            <svg class="ikon" xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg>
+            <h3>Açık alan</h3>
+            <!-- DOLDUR: Açık alan varsa şu cümleyi kullanın: "Havanın keyfini çıkarmak için dışarıda oturun." Yoksa bu kartı silin. -->
+            <p>[DOLDUR: açık alan bilgisi]</p>
+          </li>
+          <!-- YER TUTUCU: Evcil hayvan doğrulanmadı -->
+          <li class="kart">
+            <svg class="ikon" xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="11" cy="4" r="2"/><circle cx="18" cy="8" r="2"/><circle cx="20" cy="16" r="2"/><path d="M9 10a5 5 0 0 1 5 5v3.5a3.5 3.5 0 0 1-6.84 1.045Q6.52 17.48 4.46 16.84A3.5 3.5 0 0 1 5.5 10Z"/></svg>
+            <h3>Evcil hayvan dostu</h3>
+            <!-- DOLDUR: Evcil hayvan kabul ediliyorsa şu cümleyi kullanın: "Dostunuzla birlikte uğrayabilirsiniz." Edilmiyorsa bu kartı silin. -->
+            <p>[DOLDUR: evcil hayvan bilgisi]</p>
+          </li>
+          <!-- YER TUTUCU: Ödeme yöntemleri doğrulanmadı -->
+          <li class="kart">
+            <svg class="ikon" xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect width="20" height="14" x="2" y="5" rx="2"/><line x1="2" x2="22" y1="10" y2="10"/></svg>
+            <h3>Ödeme yöntemleri</h3>
+            <p>[DOLDUR: nakit / kart / diğer]</p>
+          </li>
+          <!-- YER TUTUCU: Rezervasyon doğrulanmadı -->
+          <li class="kart">
+            <svg class="ikon" xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            <h3>Rezervasyon</h3>
+            <p>[DOLDUR: evet/hayır]</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- 6. GALERİ -->
+    <section class="bolum bolum--alt" id="galeri" aria-labelledby="galeri-baslik">
+      <div class="kapsayici">
+        <h2 id="galeri-baslik">Dükkândan Kareler</h2>
+        <p class="bolum__alt">Gelmeden önce içeriyi görün. Instagram'da daha fazlası var.</p>
+      </div>
+      <!-- Gerçek fotoğraflar: <img src="img/galeri-N.webp" width="800" height="600" alt="..." loading="lazy"> -->
+      <!-- Mobilde yatay kaydırılır; klavye ile erişim için tabindex="0" -->
+      <ul class="galeri" tabindex="0" aria-label="Galeri, yatay kaydırılabilir">
+        <li><div class="yer-tutucu yer-tutucu--4-3" role="img" aria-label="Geçici görsel: [DOLDUR: alt metin, mekân genel görünümü]"><span>Geçici görsel</span></div></li>
+        <li><div class="yer-tutucu yer-tutucu--4-3" role="img" aria-label="Geçici görsel: [DOLDUR: alt metin, tezgâh veya bar]"><span>Geçici görsel</span></div></li>
+        <li><div class="yer-tutucu yer-tutucu--4-3" role="img" aria-label="Geçici görsel: [DOLDUR: alt metin, kahve fincanı]"><span>Geçici görsel</span></div></li>
+        <li><div class="yer-tutucu yer-tutucu--4-3" role="img" aria-label="Geçici görsel: [DOLDUR: alt metin, oturma alanı]"><span>Geçici görsel</span></div></li>
+        <li><div class="yer-tutucu yer-tutucu--4-3" role="img" aria-label="Geçici görsel: [DOLDUR: alt metin, tatlı/atıştırmalık]"><span>Geçici görsel</span></div></li>
+        <li><div class="yer-tutucu yer-tutucu--4-3" role="img" aria-label="Geçici görsel: [DOLDUR: alt metin, ekip veya barista]"><span>Geçici görsel</span></div></li>
+      </ul>
+      <div class="kapsayici galeri__alt">
+        <!-- DOLDUR: Instagram bağlantısı (sosyal medya) -->
+        <a class="dugme dugme--ikincil" href="#DOLDUR-instagram" data-instagram>
+          <svg class="ikon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z"/><circle cx="12" cy="13" r="3"/></svg>
+          Instagram'da Takip Et
+        </a>
+      </div>
+    </section>
+
+    <!-- 7. YORUMLAR -->
+    <!-- DOLDUR: yalnızca gerçek ve izinli Google yorumları. Puan/yorum sayısı yazmayın: [DOLDUR: Google puanı, varsa] -->
+    <section class="bolum" id="yorumlar" aria-labelledby="yorum-baslik">
+      <div class="kapsayici">
+        <h2 id="yorum-baslik">Misafirlerimiz Ne Diyor?</h2>
+        <div class="yorumlar">
+          <figure class="kart yorum">
+            <blockquote><p>"[DOLDUR: müşteri yorumu]"</p></blockquote>
+            <figcaption>[DOLDUR: isim veya baş harf], Google Yorumları</figcaption>
+          </figure>
+          <figure class="kart yorum">
+            <blockquote><p>"[DOLDUR: müşteri yorumu]"</p></blockquote>
+            <figcaption>[DOLDUR: isim veya baş harf], Google Yorumları</figcaption>
+          </figure>
+          <!-- Yorum 3 isteğe bağlı: yoksa silin -->
+          <figure class="kart yorum">
+            <blockquote><p>"[DOLDUR: müşteri yorumu]"</p></blockquote>
+            <figcaption>[DOLDUR: isim veya baş harf], Google Yorumları</figcaption>
+          </figure>
+        </div>
+        <a class="dugme dugme--ikincil" href="#DOLDUR-harita-linki" data-harita>Google'da Yorumları Oku</a>
+      </div>
+    </section>
+
+    <!-- 8. SSS (brief: 4-5 soru; metinlerdeki 6. soru (adres) ve 7. soru (fiyat güncelliği) sayfa kısa kalsın diye alınmadı) -->
+    <section class="bolum bolum--alt" id="sss" aria-labelledby="sss-baslik">
+      <div class="kapsayici sss-kap">
+        <h2 id="sss-baslik">Sık Sorulan Sorular</h2>
+        <div class="sss">
+          <details>
+            <summary>Saat kaçta açılıyorsunuz, saat kaçta kapanıyorsunuz?</summary>
+            <p>Çalışma saatlerimiz: [DOLDUR: saatler]. Gün gün saatleri İletişim bölümünde de bulabilirsiniz.</p>
+          </details>
+          <details>
+            <summary>Wi-Fi ve priz var mı? Çalışmak için uygun mu?</summary>
+            <p>[DOLDUR: Wi-Fi ve priz durumu]. Yoğun saatlerde masa bulmak için [DOLDUR: en sakin saatler] arasını öneririz.</p>
+          </details>
+          <details>
+            <summary>Rezervasyon yapabilir miyim?</summary>
+            <!-- DOLDUR: evet ise "Rezervasyon için bizi [telefon] numarasından arayabilirsiniz." / hayırsa "Rezervasyon almıyoruz, masalar geliş sırasına göre kullanılıyor." -->
+            <p>[DOLDUR: rezervasyon bilgisi]</p>
+          </details>
+          <details>
+            <summary>Evcil hayvanımla gelebilir miyim?</summary>
+            <p>[DOLDUR: evcil hayvan politikası]</p>
+          </details>
+          <details>
+            <summary>Nasıl ödeme yapabilirim?</summary>
+            <p>[DOLDUR: nakit / kredi kartı / diğer ödeme yöntemleri]</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- 9. İLETİŞİM VE KONUM -->
+    <section class="bolum" id="iletisim" aria-labelledby="iletisim-baslik">
+      <div class="kapsayici">
+        <h2 id="iletisim-baslik">Bizi Bulun</h2>
+        <p class="bolum__alt">Kadıköy'de sizi bekliyoruz. Yola çıkmadan saatlere göz atın.</p>
+
+        <div class="iletisim">
+          <div class="iletisim__bilgi">
+            <h3 class="gizli">İletişim bilgileri</h3>
+            <dl class="bilgi">
+              <div>
+                <dt>
+                  <svg class="ikon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+                  Adres
+                </dt>
+                <dd>[DOLDUR: adres]</dd>
+              </div>
+              <div>
+                <dt>
+                  <svg class="ikon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                  Telefon
+                </dt>
+                <!-- DOLDUR: telefon. Gerçek numara gelince href="tel:+90..." yapın -->
+                <dd><a href="#DOLDUR-telefon" data-telefon>[DOLDUR: telefon]</a></dd>
+              </div>
+              <!-- E-posta isteğe bağlı: yoksa bu satırı silin. Gerçek adres gelince href="mailto:..." yapın -->
+              <div>
+                <dt>E-posta</dt>
+                <dd><a href="#DOLDUR-e-posta">[DOLDUR: e-posta]</a></dd>
+              </div>
+              <div>
+                <dt>
+                  <svg class="ikon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z"/><circle cx="12" cy="13" r="3"/></svg>
+                  Instagram
+                </dt>
+                <dd><a href="#DOLDUR-instagram" data-instagram>[DOLDUR: sosyal medya]</a></dd>
+              </div>
+            </dl>
+
+            <h3>
+              <svg class="ikon" xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              Çalışma saatleri
+            </h3>
+            <ul class="saatler">
+              <li><span>Pazartesi</span> <span>[DOLDUR: saatler]</span></li>
+              <li><span>Salı</span> <span>[DOLDUR: saatler]</span></li>
+              <li><span>Çarşamba</span> <span>[DOLDUR: saatler]</span></li>
+              <li><span>Perşembe</span> <span>[DOLDUR: saatler]</span></li>
+              <li><span>Cuma</span> <span>[DOLDUR: saatler]</span></li>
+              <li><span>Cumartesi</span> <span>[DOLDUR: saatler]</span></li>
+              <li><span>Pazar</span> <span>[DOLDUR: saatler]</span></li>
+            </ul>
+            <!-- Ulaşım notu isteğe bağlı: yoksa silin -->
+            <p class="ulasim">[DOLDUR: en yakın vapur/metro/otobüs durağı ve yürüme süresi]</p>
+          </div>
+
+          <div class="iletisim__harita">
+            <!-- DOLDUR: harita gömme kodu. Google Haritalar > Paylaş > Harita yerleştir kodunu aşağıdaki kutunun yerine yapıştırın:
+            <iframe src="..." title="[DOLDUR: dükkân adı] konumu, Kadıköy" width="600" height="450" style="border:0" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe> -->
+            <div class="yer-tutucu yer-tutucu--4-3 harita-yer" role="img" aria-label="Geçici görsel: [DOLDUR: dükkân adı] konumu, Kadıköy">
+              <svg class="ikon" xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+              <span>[DOLDUR: harita gömme kodu]</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="iletisim__dugmeler">
+          <a class="dugme dugme--buyuk" href="#DOLDUR-harita-linki" data-harita>
+            <svg class="ikon" xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><polygon points="3 11 22 2 13 21 11 13 3 11"/></svg>
+            Yol Tarifi Al
+          </a>
+          <a class="dugme dugme--ikincil" href="#DOLDUR-telefon" data-telefon>Ara</a>
+          <a class="dugme dugme--ikincil" href="#DOLDUR-instagram" data-instagram>Instagram'a Git</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- 10. FOOTER -->
+  <footer class="alt">
+    <div class="kapsayici alt__ic">
+      <div>
+        <p class="alt__ad">[DOLDUR: dükkân adı]</p>
+        <p>[DOLDUR: slogan]</p>
+      </div>
+      <div>
+        <p class="alt__baslik">İletişim</p>
+        <p><a href="#DOLDUR-telefon" data-telefon>[DOLDUR: telefon]</a></p>
+      </div>
+      <div>
+        <p class="alt__baslik">Bağlantılar</p>
+        <ul>
+          <li><a href="#DOLDUR-instagram" data-instagram>Instagram [DOLDUR: sosyal medya]</a></li>
+          <li><a href="#DOLDUR-harita-linki" data-harita>Yol Tarifi Al</a></li>
+        </ul>
+      </div>
+    </div>
+    <p class="kapsayici alt__telif">© 2026 [DOLDUR: dükkân adı]. Tüm hakları saklıdır.</p>
+  </footer>
+
+  <!-- MOBİL SABİT ÇUBUK (900 px altı) -->
+  <div class="sabit-cubuk">
+    <a class="dugme" href="#DOLDUR-harita-linki" data-harita aria-label="Google Haritalar'da yol tarifi al">
+      <svg class="ikon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><polygon points="3 11 22 2 13 21 11 13 3 11"/></svg>
+      Yol Tarifi Al
+    </a>
+    <a class="dugme dugme--ikincil" href="#DOLDUR-telefon" data-telefon aria-label="Dükkânı telefonla ara">
+      <svg class="ikon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+      Ara
+    </a>
+  </div>
+</body>
+</html>
