@@ -18,7 +18,7 @@ Claude Code açılınca yaz:
 ```
 /agents
 ```
-12 ajanı listede görmelisin.
+13 ajanı listede görmelisin.
 
 ## 3. Kullan
 ```

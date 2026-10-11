@@ -12,7 +12,7 @@ cd web-studyo
 claude
 ```
 
-Claude Code açılınca `/agents` yaz, 8 ajanı görmelisin. Sonra:
+Claude Code açılınca `/agents` yaz, 9 ajanı görmelisin. Sonra:
 
 ```
 /site-yap Kadıköy'de bir kahve dükkânı için tek sayfalık site

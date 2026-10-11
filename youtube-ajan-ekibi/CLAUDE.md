@@ -17,6 +17,7 @@ Bu klasör bir YouTube içerik üretim stüdyosudur. Her zaman **Türkçe** konu
 | analitik-uzmani | YouTube Studio verisi analizi |
 | icerik-planlayici | Haftalık/aylık takvim |
 | elestirmen | Yayın öncesi kalite kontrol |
+| prompt-muhendisi | Güçlü prompt yazar/iyileştirir (Claude, görsel, video), yeni ajan tasarlar |
 
 ## Çalışma kuralları
 - Birbirine bağlı olmayan ajanları **paralel** çalıştır (ör. araştırma + rakip analizi; SEO + thumbnail + Shorts).
@@ -31,3 +32,4 @@ Bu klasör bir YouTube içerik üretim stüdyosudur. Her zaman **Türkçe** konu
 - `/haftalik-plan <konu, sıklık>`: haftalık fikir ve takvim
 - `/shorts <konu>`: 5 Shorts senaryosu
 - `/analiz <dosya.csv>`: YouTube Studio verisi analizi
+- `/prompt <istek veya prompt>`: prompt yaz / iyileştir

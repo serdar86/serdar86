@@ -13,6 +13,7 @@ Bu klasör bir web sitesi stüdyosudur. Her zaman **Türkçe** konuş ve yaz.
 | seo-uzmani | Meta, JSON-LD, sitemap, robots, yerel SEO |
 | kalite-kontrol | Bağlantı, mobil, erişilebilirlik, performans, yazım kontrolü |
 | yayinci | Netlify / Cloudflare / GitHub Pages yayın rehberi, alan adı |
+| prompt-muhendisi | Güçlü prompt yazar/iyileştirir (Claude, görsel, video), yeni ajan tasarlar |
 
 ## Çalışma kuralları
 - Bağımsız ajanları **paralel** çalıştır (metin + tasarım; SEO + yayın rehberi).
@@ -28,3 +29,4 @@ Bu klasör bir web sitesi stüdyosudur. Her zaman **Türkçe** konuş ve yaz.
 - `/tasarim-degistir <istek>`: renk/font/hava değişikliği
 - `/site-kontrol`: kalite + SEO kontrolü ve düzeltme
 - `/yayinla`: internete koyma rehberi
+- `/prompt <istek veya prompt>`: prompt yaz / iyileştir
